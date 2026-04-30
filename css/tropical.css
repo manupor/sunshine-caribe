@@ -1331,6 +1331,10 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 #main_menu .navbar-nav li.sc-language-selector.dropdown {
     float: left;
     position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+    vertical-align: top !important;
+    line-height: normal !important;
 }
 
 #main_menu .navbar-nav li.sc-language-selector.dropdown > a,
