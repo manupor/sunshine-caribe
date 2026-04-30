@@ -1328,27 +1328,79 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 }
 
 /* ===== LANGUAGE SELECTOR ===== */
-.sc-language-selector {
-    display: flex;
-    align-items: center;
-    position: relative;
+.sc-language-selector.dropdown {
+    display: inline-block;
 }
 
-.sc-language-selector #google_translate_element,
-.sc-language-selector #google_translate_element_mobile {
-    padding: 0;
-    margin: 0;
+.sc-language-selector.dropdown > a {
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 27px 0;
+    text-decoration: none;
+    display: block;
+    line-height: 1;
 }
 
-/* Ocultar el logo y texto de Google Translate */
-.goog-logo-link {
-    display: none !important;
+.sc-language-selector.dropdown > a:hover,
+.sc-language-selector.dropdown > a:focus {
+    color: var(--sc-secondary);
+    background: transparent;
 }
 
-.goog-te-gadget {
-    color: transparent !important;
-    font-size: 0 !important;
-    line-height: 0 !important;
+.sc-language-selector.dropdown.open > a,
+.sc-language-selector.dropdown.open > a:hover,
+.sc-language-selector.dropdown.open > a:focus {
+    color: var(--sc-secondary);
+    background: transparent;
+}
+
+.sc-language-selector.dropdown > a .caret {
+    margin-left: 4px;
+    border-top-color: #fff;
+    border-width: 5px 4px 0;
+}
+
+.sc-language-selector.dropdown > a:hover .caret,
+.sc-language-selector.dropdown.open > a .caret {
+    border-top-color: var(--sc-secondary);
+}
+
+/* Dropdown menu */
+.sc-lang-dropdown {
+    background: var(--sc-dark);
+    border: 2px solid var(--sc-secondary);
+    border-radius: 4px;
+    min-width: 140px;
+    padding: 5px 0;
+    margin-top: 5px;
+}
+
+.sc-lang-dropdown > li > a {
+    color: #fff;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.sc-lang-dropdown > li > a:hover {
+    background: var(--sc-secondary);
+    color: var(--sc-dark);
+}
+
+/* Mobile language selector */
+.sc-language-selector-mobile > a {
+    color: #fff;
+    padding: 12px 20px;
+    display: block;
+    font-size: 14px;
+}
+
+.sc-language-selector-mobile > a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
 }
 
 /* Ocultar banner de Google Translate */
@@ -1360,108 +1412,17 @@ body {
     top: 0 !important;
 }
 
-/* Estilo del widget principal */
-.goog-te-gadget-simple {
-    background-color: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: inline-block !important;
-}
-
-/* Ocultar el texto "Seleccionar idioma" */
-.goog-te-gadget-simple .goog-te-menu-value span:first-child {
+/* Ocultar elementos de Google Translate */
+#google_translate_element_hidden {
     display: none !important;
 }
 
-/* Estilo del botón/link del idioma */
-.goog-te-gadget-simple .goog-te-menu-value {
-    color: #fff !important;
-    font-family: 'Lato', sans-serif !important;
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    padding: 8px 16px !important;
-    border: 2px solid var(--sc-secondary) !important;
-    border-radius: 4px !important;
-    background: transparent !important;
-    transition: all 0.3s ease !important;
-    display: inline-block !important;
-    cursor: pointer !important;
-    margin: 0 !important;
-}
-
-.goog-te-gadget-simple .goog-te-menu-value:hover {
-    background-color: var(--sc-secondary) !important;
-    color: var(--sc-dark) !important;
-}
-
-/* Flecha del selector */
-.goog-te-gadget-simple .goog-te-menu-value span {
-    color: #fff !important;
-    border: none !important;
-}
-
-.goog-te-gadget-simple:hover .goog-te-menu-value span {
-    color: var(--sc-dark) !important;
-}
-
-/* Ocultar icono de Google */
-.goog-te-gadget-icon {
+.goog-logo-link {
     display: none !important;
 }
 
-/* Hacer el selector más compacto */
-.goog-te-menu-value > span:last-child {
-    margin-left: 4px !important;
-}
-
-/* Ajustes para móvil */
-#mobile_menu .sc-language-selector {
-    padding: 10px 20px;
-    justify-content: flex-start;
-}
-
-#mobile_menu .goog-te-gadget-simple .goog-te-menu-value {
-    width: auto !important;
-    max-width: 150px !important;
-}
-
-/* Responsive */
-@media (max-width: 991px) {
-    .sc-language-selector {
-        justify-content: center;
-        margin: 5px 0;
-    }
-}
-
-/* Estilo del dropdown cuando se abre */
-.goog-te-menu-frame {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-    border-radius: 4px !important;
-    border: 1px solid var(--sc-secondary) !important;
-}
-
-/* Ocultar "Powered by" en el dropdown */
-.goog-te-menu2 {
-    background: var(--sc-dark) !important;
-    border: none !important;
-}
-
-.goog-te-menu2-item div,
-.goog-te-menu2-item:link div,
-.goog-te-menu2-item:visited div,
-.goog-te-menu2-item:active div {
-    color: #fff !important;
-    font-family: 'Lato', sans-serif !important;
-}
-
-.goog-te-menu2-item:hover {
-    background-color: var(--sc-secondary) !important;
-}
-
-.goog-te-menu2-item:hover div {
-    color: var(--sc-dark) !important;
+.goog-te-gadget {
+    display: none !important;
 }
 
 /* ===== SCROLLED HEADER JS HOOK ===== */

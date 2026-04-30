@@ -68,8 +68,14 @@
                         <li><a href="index.html#puerto-viejo">PUERTO VIEJO</a></li>
                         <li><a href="blog-puerto-viejo.html">BLOG</a></li>
                         <li><a href="contacto.html">CONT&Aacute;CTANOS</a></li>
-                        <li class="sc-language-selector">
-                            <div id="google_translate_element"></div>
+                        <li class="dropdown sc-language-selector">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                IDIOMA <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu sc-lang-dropdown">
+                                <li><a href="#" class="sc-lang-option" data-lang="es">Español</a></li>
+                                <li><a href="#" class="sc-lang-option" data-lang="en">English</a></li>
+                            </ul>
                         </li>
                         <li class="menu_button">
                             <a href="https://wa.me/50688932987" class="button sc-btn-secondary" target="_blank">
@@ -86,8 +92,11 @@
                         <li><a href="index.html#puerto-viejo">PUERTO VIEJO</a></li>
                         <li><a href="blog-puerto-viejo.html">BLOG</a></li>
                         <li><a href="contacto.html">CONT&Aacute;CTANOS</a></li>
-                        <li class="sc-language-selector">
-                            <div id="google_translate_element_mobile"></div>
+                        <li class="sc-language-selector-mobile">
+                            <a href="#" class="sc-lang-option" data-lang="es">🇪🇸 Español</a>
+                        </li>
+                        <li class="sc-language-selector-mobile">
+                            <a href="#" class="sc-lang-option" data-lang="en">🇺🇸 English</a>
                         </li>
                         <li class="menu_button">
                             <a href="https://wa.me/50688932987" class="button sc-btn-secondary" target="_blank">
@@ -762,25 +771,59 @@
         })();
     </script>
 
-    <!-- Google Translate -->
+    <!-- Language Switcher -->
     <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'es',
-                includedLanguages: 'en,es,fr,de,it,pt',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
+        (function() {
+            var translateInitialized = false;
             
-            new google.translate.TranslateElement({
-                pageLanguage: 'es',
-                includedLanguages: 'en,es,fr,de,it,pt',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element_mobile');
-        }
+            function initGoogleTranslate() {
+                if (!translateInitialized) {
+                    var script = document.createElement('script');
+                    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+                    document.body.appendChild(script);
+                    
+                    window.googleTranslateElementInit = function() {
+                        new google.translate.TranslateElement({
+                            pageLanguage: 'es',
+                            includedLanguages: 'en,es',
+                            autoDisplay: false
+                        }, 'google_translate_element_hidden');
+                        translateInitialized = true;
+                    };
+                    
+                    var hiddenDiv = document.createElement('div');
+                    hiddenDiv.id = 'google_translate_element_hidden';
+                    hiddenDiv.style.display = 'none';
+                    document.body.appendChild(hiddenDiv);
+                }
+            }
+            
+            function translatePage(lang) {
+                if (!translateInitialized) {
+                    initGoogleTranslate();
+                    setTimeout(function() { triggerLanguageChange(lang); }, 1500);
+                } else {
+                    triggerLanguageChange(lang);
+                }
+            }
+            
+            function triggerLanguageChange(lang) {
+                var select = document.querySelector('.goog-te-combo');
+                if (select) {
+                    select.value = lang;
+                    select.dispatchEvent(new Event('change'));
+                }
+            }
+            
+            document.querySelectorAll('.sc-lang-option').forEach(function(option) {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var lang = this.getAttribute('data-lang');
+                    translatePage(lang);
+                });
+            });
+        })();
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
