@@ -1329,27 +1329,31 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 
 /* ===== LANGUAGE SELECTOR ===== */
 #main_menu .navbar-nav li.sc-language-selector.dropdown {
-    float: left;
-    position: relative;
+    float: left !important;
+    position: relative !important;
     margin: 0 !important;
     padding: 0 !important;
-    vertical-align: top !important;
-    line-height: normal !important;
+    vertical-align: baseline !important;
+    line-height: 1 !important;
+    height: auto !important;
 }
 
 #main_menu .navbar-nav li.sc-language-selector.dropdown > a,
-.sc-language-selector.dropdown > a {
+.sc-language-selector.dropdown > a,
+.transparent #main_menu .navbar-nav li.sc-language-selector.dropdown > a {
     color: #fff !important;
-    font-family: 'Lato', sans-serif;
-    font-size: .95em;
-    font-weight: 900;
-    letter-spacing: .05em;
-    text-transform: uppercase;
+    font-family: 'Lato', sans-serif !important;
+    font-size: .95em !important;
+    font-weight: 900 !important;
+    letter-spacing: .05em !important;
+    text-transform: uppercase !important;
     padding: 30px 20px !important;
-    text-decoration: none;
-    display: block;
-    transition: all 0.3s;
-    line-height: normal;
+    text-decoration: none !important;
+    display: block !important;
+    transition: all 0.3s !important;
+    line-height: 1 !important;
+    height: auto !important;
+    margin: 0 !important;
 }
 
 .scroll #main_menu .navbar-nav li.sc-language-selector.dropdown > a,

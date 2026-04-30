@@ -777,6 +777,7 @@
             // Mapeo de páginas español -> inglés
             var pageMap = {
                 'index.html': 'index-en.html',
+                '': 'index-en.html',
                 'habitaciones.html': 'rooms-en.html',
                 'contacto.html': 'contact-en.html',
                 'blog-puerto-viejo.html': 'blog-puerto-viejo-en.html'
@@ -792,14 +793,10 @@
                         var currentPage = window.location.pathname.split('/').pop() || 'index.html';
                         
                         // Buscar la versión en inglés
-                        var englishPage = pageMap[currentPage];
+                        var englishPage = pageMap[currentPage] || pageMap['index.html'];
                         
-                        if (englishPage) {
-                            window.location.href = englishPage;
-                        } else {
-                            // Si no hay traducción, mostrar mensaje
-                            alert('English version coming soon!');
-                        }
+                        // Redirigir a la versión en inglés
+                        window.location.href = englishPage;
                     }
                     // Si es español, no hacer nada (ya estamos en español)
                 });
