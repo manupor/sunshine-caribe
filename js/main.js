@@ -74,8 +74,9 @@
                     $(".dark").addClass("nodisplay");
                     $(".light").removeClass("nodisplay");
 
-                    header.removeClass("scroll");
-                    header.removeClass("navbar-fixed-top");
+                    /* NAVBAR ALWAYS FIXED - Do not remove classes */
+                    /* header.removeClass("scroll"); */
+                    /* header.removeClass("navbar-fixed-top"); */
                 }
             }
         });

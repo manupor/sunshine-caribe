@@ -52,30 +52,31 @@
         <header class="fixed bg-solid">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle mobile_menu_btn" data-toggle="collapse" data-target=".mobile_menu" aria-expanded="false">
+                    <button type="button" class="navbar-toggle mobile_menu_btn jPushMenuBtn" aria-expanded="false">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="index.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 55" height="46" aria-label="Sunshine Caribe">
-                            <circle cx="28" cy="20" r="9" fill="#f4a261"/>
-                            <line x1="28" y1="5" x2="28" y2="1" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                            <line x1="28" y1="35" x2="28" y2="39" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                            <line x1="13" y1="20" x2="9" y2="20" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                            <line x1="43" y1="20" x2="47" y2="20" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                            <line x1="17.4" y1="9.4" x2="14.6" y2="6.6" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                            <line x1="38.6" y1="30.6" x2="41.4" y2="33.4" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                            <line x1="38.6" y1="9.4" x2="41.4" y2="6.6" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                            <line x1="17.4" y1="30.6" x2="14.6" y2="33.4" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                            <path d="M 7 43 Q 14 37 21 43 Q 28 49 35 43 Q 42 37 49 43" fill="none" stroke="#83c5be" stroke-width="2.2" stroke-linecap="round"/>
-                            <path d="M 7 49 Q 14 43 21 49 Q 28 55 35 49 Q 42 43 49 49" fill="none" stroke="#006d77" stroke-width="1.8" stroke-linecap="round"/>
-                            <text x="56" y="24" font-family="Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#ffffff">Sunshine</text>
-                            <text x="56" y="42" font-family="Playfair Display,Georgia,serif" font-size="15" font-style="italic" fill="#83c5be">Caribe</text>
-                        </svg>
+                        <img src="images/sunshinecaribe_logo.png" height="46" alt="Sunshine Caribe">
                     </a>
                 </div>
-                <nav id="main_menu" class="mobile_menu navbar-collapse">
+                <!-- Desktop Menu -->
+                <nav id="main_menu" class="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">INICIO</a></li>
+                        <li class="active"><a href="habitaciones.html">HABITACIONES</a></li>
+                        <li><a href="index.html#puerto-viejo">PUERTO VIEJO</a></li>
+                        <li><a href="contacto.html">CONT&Aacute;CTANOS</a></li>
+                        <li class="menu_button">
+                            <a href="https://wa.link/ji8wue" class="button sc-btn-secondary" target="_blank">
+                                RESERVAR
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Mobile Menu -->
+                <nav id="mobile_menu" class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">INICIO</a></li>
                         <li class="active"><a href="habitaciones.html">HABITACIONES</a></li>
@@ -352,21 +353,7 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-6 widget">
                             <div class="about sc-footer-logo">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 55" height="48">
-                                    <circle cx="28" cy="20" r="9" fill="#f4a261"/>
-                                    <line x1="28" y1="5" x2="28" y2="1" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                                    <line x1="28" y1="35" x2="28" y2="39" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                                    <line x1="13" y1="20" x2="9" y2="20" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                                    <line x1="43" y1="20" x2="47" y2="20" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                                    <line x1="17.4" y1="9.4" x2="14.6" y2="6.6" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                                    <line x1="38.6" y1="30.6" x2="41.4" y2="33.4" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                                    <line x1="38.6" y1="9.4" x2="41.4" y2="6.6" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                                    <line x1="17.4" y1="30.6" x2="14.6" y2="33.4" stroke="#f4a261" stroke-width="2.2" stroke-linecap="round"/>
-                                    <path d="M 7 43 Q 14 37 21 43 Q 28 49 35 43 Q 42 37 49 43" fill="none" stroke="#83c5be" stroke-width="2.2" stroke-linecap="round"/>
-                                    <path d="M 7 49 Q 14 43 21 49 Q 28 55 35 49 Q 42 43 49 49" fill="none" stroke="#006d77" stroke-width="1.8" stroke-linecap="round"/>
-                                    <text x="56" y="24" font-family="Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#ffffff">Sunshine</text>
-                                    <text x="56" y="42" font-family="Playfair Display,Georgia,serif" font-size="15" font-style="italic" fill="#83c5be">Caribe</text>
-                                </svg>
+                                <img src="images/sunshinecaribe_logo.png" height="48" alt="Sunshine Caribe">
                                 <p style="margin-top:16px">Tu hogar en el Caribe Sur de Costa Rica. A pasos de las playas de arena negra de Puerto Viejo.</p>
                             </div>
                         </div>
@@ -430,6 +417,175 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script>
         if (typeof WOW !== 'undefined') { new WOW().init(); }
+    </script>
+
+    <!-- ROOM GALLERY MODAL -->
+    <div id="roomModal" class="sc-room-modal">
+        <div class="sc-modal-content">
+            <button class="sc-modal-close" onclick="closeRoomModal()">&times;</button>
+            <div class="sc-modal-gallery">
+                <button class="sc-modal-nav prev" onclick="changeRoomImage(-1)"><i class="fa fa-chevron-left"></i></button>
+                <div id="modalGalleryImages"></div>
+                <button class="sc-modal-nav next" onclick="changeRoomImage(1)"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            <div class="sc-modal-thumbs" id="modalThumbs"></div>
+            <div class="sc-modal-info">
+                <h3 id="modalRoomTitle">Habitación</h3>
+                <p id="modalRoomDesc">Descripción de la habitación</p>
+                <ul class="sc-modal-features" id="modalRoomFeatures"></ul>
+                <div class="sc-modal-actions">
+                    <a href="https://wa.link/ji8wue" class="button sc-btn-primary" target="_blank"><i class="fa fa-whatsapp"></i> Reservar</a>
+                    <a href="contacto.html" class="button sc-btn-outline">Consultar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Room data with galleries - add more images as needed
+    const ROOM_DATA = {
+        1: {
+            title: 'Habitación #1 - Familiar Doble',
+            desc: 'Espaciosa habitación para 4 personas con 2 camas matrimoniales.',
+            features: ['4 personas', '2 camas matrimoniales', 'Full equipada', 'Agua caliente', 'Baño completo', 'Aire acondicionado'],
+            images: ['images/sunshine/room1.jpg']
+        },
+        2: {
+            title: 'Habitación #2 - Familiar Doble',
+            desc: 'Espaciosa habitación para 4 personas con 2 camas matrimoniales.',
+            features: ['4 personas', '2 camas matrimoniales', 'Full equipada', 'Agua caliente', 'Baño completo', 'Aire acondicionado'],
+            images: ['images/sunshine/room2.jpg']
+        },
+        3: {
+            title: 'Habitación #3 - Triple',
+            desc: 'Cómoda habitación para 3 personas con cama matrimonial e individual.',
+            features: ['3 personas', '1 matrimonial + 1 individual', 'Full equipada', 'Agua caliente', 'Baño completo', 'Aire acondicionado'],
+            images: ['images/sunshine/room3.jpg']
+        },
+        4: {
+            title: 'Habitación #4 - Triple',
+            desc: 'Cómoda habitación para 3 personas con cama matrimonial e individual.',
+            features: ['3 personas', '1 matrimonial + 1 individual', 'Full equipada', 'Agua caliente', 'Baño completo', 'Aire acondicionado'],
+            images: ['images/sunshine/room4.jpg']
+        },
+        5: {
+            title: 'Habitación #5 - Familiar Doble',
+            desc: 'Espaciosa habitación para 4 personas con 2 camas matrimoniales.',
+            features: ['4 personas', '2 camas matrimoniales', 'Full equipada', 'Agua caliente', 'Baño completo', 'Aire acondicionado'],
+            images: ['images/sunshine/room5.jpg']
+        },
+        6: {
+            title: 'Habitación #6 - Triple',
+            desc: 'Cómoda habitación para 3 personas con cama matrimonial e individual.',
+            features: ['3 personas', '1 matrimonial + 1 individual', 'Full equipada', 'Agua caliente', 'Baño completo', 'Aire acondicionado'],
+            images: ['images/sunshine/room6.jpg']
+        },
+        7: {
+            title: 'Habitación #7 - Triple',
+            desc: 'Cómoda habitación para 3 personas con cama matrimonial e individual.',
+            features: ['3 personas', '1 matrimonial + 1 individual', 'Full equipada', 'Agua caliente', 'Baño completo', 'Aire acondicionado'],
+            images: ['images/sunshine/room7.jpg']
+        },
+        8: {
+            title: 'Habitación #8 - Familiar Doble',
+            desc: 'Espaciosa habitación para 4 personas con 2 camas matrimoniales.',
+            features: ['4 personas', '2 camas matrimoniales', 'Full equipada', 'Agua caliente', 'Baño completo', 'Aire acondicionado'],
+            images: ['images/sunshine/room8.jpg']
+        },
+        9: {
+            title: 'Habitación #9 - Doble Estándar',
+            desc: 'Acogedora habitación para 2 personas con abanico.',
+            features: ['2 personas', '1 cama matrimonial', 'Full equipada', 'Agua caliente', 'Abanico'],
+            images: ['images/sunshine/room9.jpg']
+        }
+    };
+
+    let currentRoomId = null;
+    let currentImageIndex = 0;
+
+    function openRoomModal(roomId) {
+        currentRoomId = roomId;
+        currentImageIndex = 0;
+        const room = ROOM_DATA[roomId];
+        if (!room) return;
+
+        // Build gallery images
+        const galleryDiv = document.getElementById('modalGalleryImages');
+        galleryDiv.innerHTML = room.images.map((img, i) =>
+            `<img src="${img}" class="${i === 0 ? 'active' : ''}" data-index="${i}">`
+        ).join('');
+
+        // Build thumbnails
+        const thumbsDiv = document.getElementById('modalThumbs');
+        thumbsDiv.innerHTML = room.images.map((img, i) =>
+            `<div class="sc-modal-thumb ${i === 0 ? 'active' : ''}" onclick="goToImage(${i})"><img src="${img}"></div>`
+        ).join('');
+
+        // Set room info
+        document.getElementById('modalRoomTitle').textContent = room.title;
+        document.getElementById('modalRoomDesc').textContent = room.desc;
+        document.getElementById('modalRoomFeatures').innerHTML = room.features.map(f =>
+            `<li><i class="fa fa-check-circle"></i> ${f}</li>`
+        ).join('');
+
+        // Show modal
+        document.getElementById('roomModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeRoomModal() {
+        document.getElementById('roomModal').classList.remove('active');
+        document.body.style.overflow = '';
+        currentRoomId = null;
+    }
+
+    function changeRoomImage(dir) {
+        const room = ROOM_DATA[currentRoomId];
+        if (!room || room.images.length <= 1) return;
+
+        currentImageIndex = (currentImageIndex + dir + room.images.length) % room.images.length;
+        updateGallery();
+    }
+
+    function goToImage(index) {
+        currentImageIndex = index;
+        updateGallery();
+    }
+
+    function updateGallery() {
+        const gallery = document.querySelectorAll('#modalGalleryImages img');
+        const thumbs = document.querySelectorAll('.sc-modal-thumb');
+
+        gallery.forEach((img, i) => {
+            img.classList.toggle('active', i === currentImageIndex);
+        });
+        thumbs.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === currentImageIndex);
+        });
+    }
+
+    // Add click handlers to room cards
+    document.addEventListener('DOMContentLoaded', function() {
+        const roomCards = document.querySelectorAll('.sc-room-list-card');
+        roomCards.forEach((card, index) => {
+            const img = card.querySelector('.sc-room-list-img');
+            if (img) {
+                img.addEventListener('click', function() {
+                    openRoomModal(index + 1);
+                });
+            }
+        });
+    });
+
+    // Close modal on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeRoomModal();
+    });
+
+    // Close modal on background click
+    document.getElementById('roomModal').addEventListener('click', function(e) {
+        if (e.target === this) closeRoomModal();
+    });
     </script>
 
 </body>

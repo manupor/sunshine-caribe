@@ -17,11 +17,11 @@ jQuery(document).ready(function($){
         $(this).click(function () {
 
             $(this).toggleClass('mobile_menu_active');
-            $('.mobile_menu').toggleClass('mobile_menu_open');
+            $('#mobile_menu').toggleClass('mobile_menu_open cbp-spmenu-open');
 
             /* mobile menu button class */
             if ($(this).is('.mobile_menu_btn')) {
-                $('body').toggleClass('push_mobile');
+                $('body').toggleClass('push_mobile cbp-spmenu-push-toright');
             }
 
             /* disable all other button */
@@ -31,7 +31,8 @@ jQuery(document).ready(function($){
         });
         var jPushMenu = {
             close: function (o) {
-                $('.jPushMenuBtn,body,.mobile_menu_btn,.mobile_menu').removeClass('disabled active mobile_menu_active mobile_menu_open push_mobile');
+                $('.jPushMenuBtn,body,.mobile_menu_btn').removeClass('disabled active mobile_menu_active push_mobile cbp-spmenu-push-toright');
+                $('#mobile_menu').removeClass('mobile_menu_open cbp-spmenu-open');
             }
         };
 
@@ -44,18 +45,18 @@ jQuery(document).ready(function($){
                 jPushMenu.close();
             });
 
-            $('.mobile_menu,.mobile_menu_btn').click(function (e) {
+            $('#mobile_menu,.mobile_menu_btn').click(function (e) {
                 e.stopPropagation();
             });
 
-            $('.mobile_menu,.mobile_menu_btn').on('click touchstart', function (e) {
+            $('#mobile_menu,.mobile_menu_btn').on('click touchstart', function (e) {
                 e.stopPropagation();
             });
         }
 
         // On Click Link - Mobile menu link
         if (o.closeOnClickLink) {
-            $('.mobile_menu a').on('click', function () {
+            $('#mobile_menu a').on('click', function () {
                 jPushMenu.close();
             });
         }
