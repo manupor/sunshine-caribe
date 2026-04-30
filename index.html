@@ -692,13 +692,14 @@
 
                 /* If Apps Script not configured, fallback to WhatsApp */
                 if (!SC_CONFIG.APPS_SCRIPT_URL || SC_CONFIG.APPS_SCRIPT_URL === 'TU_APPS_SCRIPT_URL_AQUI') {
-                    var msg = 'Hola! Me gustaría reservar:\n'
-                        + 'Nombre: ' + nombre + '\n'
-                        + 'Habitación: ' + hab + '\n'
-                        + 'Llegada: ' + llegada + '\n'
-                        + 'Salida: ' + salida + '\n'
-                        + 'Email: ' + email;
-                    window.open('https://wa.me/50688888888?text=' + encodeURIComponent(msg), '_blank');
+                    var msg = 'Hola! Me gustaría consultar disponibilidad y precios para:\n\n'
+                        + '👤 Nombre: ' + nombre + '\n'
+                        + '🏠 Habitación: ' + hab + '\n'
+                        + '📅 Llegada: ' + llegada + '\n'
+                        + '📅 Salida: ' + salida + '\n'
+                        + '📧 Email: ' + email + '\n\n'
+                        + '¿Tienen disponibilidad para estas fechas?';
+                    window.open('https://wa.me/50688932987?text=' + encodeURIComponent(msg), '_blank');
                     return;
                 }
 
