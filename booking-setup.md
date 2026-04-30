@@ -60,7 +60,7 @@ var SC_CONFIG = {
     GOOGLE_API_KEY:  'TU_API_KEY_AQUI',      // ← Pega la API Key del Paso 2
     CALENDAR_ID:     'TU_CALENDAR_ID_AQUI',   // ← Pega el Calendar ID del Paso 1
     APPS_SCRIPT_URL: 'TU_APPS_SCRIPT_URL_AQUI', // ← Pega la URL del Paso 3
-    WHATSAPP_FALLBACK: 'https://wa.link/ji8wue'
+    WHATSAPP_FALLBACK: 'https://wa.me/50688932987'
 };
 ```
 

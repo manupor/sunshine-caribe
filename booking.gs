@@ -61,7 +61,7 @@ function doPost(e) {
           + 'Nos comunicaremos contigo pronto para confirmar disponibilidad y darte los datos de pago.\n\n'
           + 'Hotel Sunshine Caribe\n'
           + 'Puerto Viejo de Talamanca, Costa Rica\n'
-          + 'WhatsApp: https://wa.link/ji8wue\n'
+          + 'WhatsApp: https://wa.me/50688932987\n'
           + 'Email: ' + HOTEL_EMAIL
     });
 
