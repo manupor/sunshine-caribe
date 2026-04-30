@@ -774,52 +774,34 @@
     <!-- Language Switcher -->
     <script type="text/javascript">
         (function() {
-            var translateInitialized = false;
-            
-            function initGoogleTranslate() {
-                if (!translateInitialized) {
-                    var script = document.createElement('script');
-                    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-                    document.body.appendChild(script);
-                    
-                    window.googleTranslateElementInit = function() {
-                        new google.translate.TranslateElement({
-                            pageLanguage: 'es',
-                            includedLanguages: 'en,es',
-                            autoDisplay: false
-                        }, 'google_translate_element_hidden');
-                        translateInitialized = true;
-                    };
-                    
-                    var hiddenDiv = document.createElement('div');
-                    hiddenDiv.id = 'google_translate_element_hidden';
-                    hiddenDiv.style.display = 'none';
-                    document.body.appendChild(hiddenDiv);
-                }
-            }
-            
-            function translatePage(lang) {
-                if (!translateInitialized) {
-                    initGoogleTranslate();
-                    setTimeout(function() { triggerLanguageChange(lang); }, 1500);
-                } else {
-                    triggerLanguageChange(lang);
-                }
-            }
-            
-            function triggerLanguageChange(lang) {
-                var select = document.querySelector('.goog-te-combo');
-                if (select) {
-                    select.value = lang;
-                    select.dispatchEvent(new Event('change'));
-                }
-            }
+            // Mapeo de páginas español -> inglés
+            var pageMap = {
+                'index.html': 'index-en.html',
+                'habitaciones.html': 'rooms-en.html',
+                'contacto.html': 'contact-en.html',
+                'blog-puerto-viejo.html': 'blog-puerto-viejo-en.html'
+            };
             
             document.querySelectorAll('.sc-lang-option').forEach(function(option) {
                 option.addEventListener('click', function(e) {
                     e.preventDefault();
                     var lang = this.getAttribute('data-lang');
-                    translatePage(lang);
+                    
+                    if (lang === 'en') {
+                        // Obtener la página actual
+                        var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                        
+                        // Buscar la versión en inglés
+                        var englishPage = pageMap[currentPage];
+                        
+                        if (englishPage) {
+                            window.location.href = englishPage;
+                        } else {
+                            // Si no hay traducción, mostrar mensaje
+                            alert('English version coming soon!');
+                        }
+                    }
+                    // Si es español, no hacer nada (ya estamos en español)
                 });
             });
         })();
