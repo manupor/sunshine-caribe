@@ -1,0 +1,41 @@
+# Archivos HTML no utilizados
+404-v2.html
+about-us.html
+blog-post.html
+blog-post2.html
+blog.html
+booking-form.html
+boxed.html
+buttons.html
+coming-soon.html
+contact.html
+contact2.html
+event-details.html
+events.html
+full-width.html
+gallery*.html
+icons.html
+index2.html
+index3.html
+index4.html
+left-sidebar.html
+loading*.html
+location.html
+our-staff.html
+place-details.html
+places.html
+restaurant.html
+right-sidebar.html
+room.html
+room2.html
+rooms-*.html
+spa.html
+typography.html
+
+# Documentación
+*.md
+!README.md
+
+# Archivos de desarrollo
+.DS_Store
+*.log
