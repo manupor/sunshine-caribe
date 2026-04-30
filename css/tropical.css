@@ -1375,19 +1375,24 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 
 /* Dropdown menu */
 .sc-lang-dropdown {
-    background: var(--sc-dark);
-    border: 2px solid var(--sc-secondary);
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
     border-radius: 4px;
-    min-width: 140px;
-    padding: 5px 0;
-    margin-top: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 120px;
+    padding: 8px 0;
+    margin-top: 0;
+    left: auto;
+    right: 0;
 }
 
 .sc-lang-dropdown > li > a {
-    color: #fff;
-    padding: 8px 20px;
+    color: var(--sc-dark);
+    padding: 8px 16px;
     font-size: 13px;
     font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
 }
 
 .sc-lang-dropdown > li > a:hover {
