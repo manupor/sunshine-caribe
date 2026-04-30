@@ -1771,7 +1771,7 @@ header.fixed.bg-solid {
 .sc-modal-thumb:hover { opacity: 0.9; }
 .sc-modal-thumb.active { opacity: 1; border-color: var(--sc-primary); }
 .sc-modal-info {
-    padding: 24px 28px;
+    padding: 40px 28px 24px;
 }
 .sc-modal-info h3 {
     font-family: var(--font-heading);
