@@ -1327,6 +1327,127 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
     .sc-blog-post-meta { gap: 15px; font-size: 0.85em; }
 }
 
+/* ===== LANGUAGE SELECTOR ===== */
+.sc-language-selector {
+    display: flex;
+    align-items: center;
+}
+
+.sc-language-selector #google_translate_element,
+.sc-language-selector #google_translate_element_mobile {
+    padding: 0;
+}
+
+/* Ocultar el logo de Google Translate */
+.goog-logo-link {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    color: transparent !important;
+    font-size: 0 !important;
+}
+
+/* Estilo del selector */
+.goog-te-combo {
+    background: transparent;
+    border: 2px solid var(--sc-secondary);
+    border-radius: 4px;
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.goog-te-combo:hover {
+    background: var(--sc-secondary);
+    color: var(--sc-dark);
+}
+
+.goog-te-combo option {
+    background: var(--sc-dark);
+    color: #fff;
+}
+
+/* Ocultar el texto "Powered by" */
+.goog-te-gadget-simple {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value {
+    color: #fff !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value span {
+    color: #fff !important;
+    border-left: none !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value span:first-child {
+    display: none;
+}
+
+/* Ajustes para móvil */
+#mobile_menu .sc-language-selector {
+    padding: 10px 20px;
+}
+
+#mobile_menu .goog-te-combo {
+    width: 100%;
+    max-width: 200px;
+}
+
+/* Ocultar banner de Google Translate en la parte superior */
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+/* Estilo mejorado del widget */
+.goog-te-gadget-simple {
+    background-color: transparent !important;
+    border: 2px solid var(--sc-secondary) !important;
+    border-radius: 4px !important;
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    transition: all 0.3s ease !important;
+}
+
+.goog-te-gadget-simple:hover {
+    background-color: var(--sc-secondary) !important;
+}
+
+.goog-te-gadget-simple:hover .goog-te-menu-value span {
+    color: var(--sc-dark) !important;
+}
+
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+.goog-te-menu-value span:first-child {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .sc-language-selector {
+        justify-content: center;
+        margin: 10px 0;
+    }
+}
+
 /* ===== SCROLLED HEADER JS HOOK ===== */
 header.fixed.bg-solid {
     background: var(--sc-dark) !important;
