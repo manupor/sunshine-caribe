@@ -1,5 +1,5 @@
  /*================================================
-* Template Name: Hotel Zante - Hotel & Resort HTML Template
+* Template Name: Sunshine Caribe - Hotel & Resort HTML Template
 * Version: 1.3
 * Author Name: Jomin Muskaj (Eagle-Themes)
 * Author URI: eagle-themes.com
@@ -944,16 +944,16 @@
         function initialize() {
             var map;
             var panorama;
-            var var_latitude = 37.8614626; // Google Map Latitude
-            var var_longitude = 20.625886; // Google Map Longitude
+            var var_latitude = 9.6593; // Puerto Viejo de Talamanca Latitude
+            var var_longitude = -82.7575; // Puerto Viejo de Talamanca Longitude
             var pin = 'images/icons/pin.svg';
 
             //Map pin-window details
-            var title = "Hotel Zante - Click to see";
-            var hotel_name = "Hotel Zante";
-            var hotel_address = "25, Navagio Zakynthos, Greece";
-            var hotel_desc = "5 star deluxe Hotel";
-            var hotel_more_desc = "Lorem ipsum dolor sit amet, consectetur.";
+            var title = "Sunshine Caribe - Ver ubicación";
+            var hotel_name = "Sunshine Caribe";
+            var hotel_address = "Puerto Viejo de Talamanca, Limón, Costa Rica";
+            var hotel_desc = "Hotel boutique en el Caribe Sur";
+            var hotel_more_desc = "A 2 minutos de las playas de arena negra";
 
             var hotel_location = new google.maps.LatLng(var_latitude, var_longitude);
             var mapOptions = {
