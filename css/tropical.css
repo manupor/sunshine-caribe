@@ -1328,10 +1328,12 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 }
 
 /* ===== LANGUAGE SELECTOR ===== */
-.sc-language-selector.dropdown {
-    display: inline-block;
+#main_menu .navbar-nav li.sc-language-selector.dropdown {
+    float: left;
+    position: relative;
 }
 
+#main_menu .navbar-nav li.sc-language-selector.dropdown > a,
 .sc-language-selector.dropdown > a {
     color: #fff !important;
     font-family: 'Lato', sans-serif;
@@ -1343,8 +1345,10 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
     text-decoration: none;
     display: block;
     transition: all 0.3s;
+    line-height: normal;
 }
 
+.scroll #main_menu .navbar-nav li.sc-language-selector.dropdown > a,
 .scroll .sc-language-selector.dropdown > a {
     padding: 20px 20px !important;
 }
