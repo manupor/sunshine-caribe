@@ -68,13 +68,13 @@
                         <li><a href="index-en.html#puerto-viejo">PUERTO VIEJO</a></li>
                         <li><a href="blog-puerto-viejo-en.html">BLOG</a></li>
                         <li><a href="contact-en.html">CONTACT</a></li>
-                        <li class="dropdown sc-language-selector">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <li class="sc-language-selector">
+                            <a href="#">
                                 LANGUAGE <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu sc-lang-dropdown">
-                                <li><a href="index.html" class="sc-lang-option" data-lang="es">Español</a></li>
-                                <li><a href="index-en.html" class="sc-lang-option" data-lang="en">English</a></li>
+                            <ul class="sc-lang-dropdown">
+                                <li><a href="index.html">Español</a></li>
+                                <li><a href="index-en.html">English</a></li>
                             </ul>
                         </li>
                         <li class="menu_button">
@@ -93,10 +93,10 @@
                         <li><a href="blog-puerto-viejo-en.html">BLOG</a></li>
                         <li><a href="contact-en.html">CONTACT</a></li>
                         <li class="sc-language-selector-mobile">
-                            <a href="index.html" class="sc-lang-option" data-lang="es">🇪🇸 Español</a>
+                            <a href="index.html">🇪🇸 Español</a>
                         </li>
                         <li class="sc-language-selector-mobile">
-                            <a href="index-en.html" class="sc-lang-option" data-lang="en">🇺🇸 English</a>
+                            <a href="index-en.html">🇺🇸 English</a>
                         </li>
                         <li class="menu_button">
                             <a href="https://wa.me/50688932987" class="button sc-btn-secondary" target="_blank">
@@ -771,41 +771,6 @@
         })();
     </script>
 
-    <!-- Language Switcher -->
-    <script type="text/javascript">
-        (function() {
-            // Mapeo de páginas español -> inglés
-            var pageMap = {
-                'index.html': 'index-en.html',
-                'habitaciones.html': 'rooms-en.html',
-                'contacto.html': 'contact-en.html',
-                'blog-puerto-viejo.html': 'blog-puerto-viejo-en.html'
-            };
-            
-            document.querySelectorAll('.sc-lang-option').forEach(function(option) {
-                option.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var lang = this.getAttribute('data-lang');
-                    
-                    if (lang === 'en') {
-                        // Obtener la página actual
-                        var currentPage = window.location.pathname.split('/').pop() || 'index.html';
-                        
-                        // Buscar la versión en inglés
-                        var englishPage = pageMap[currentPage];
-                        
-                        if (englishPage) {
-                            window.location.href = englishPage;
-                        } else {
-                            // Si no hay traducción, mostrar mensaje
-                            alert('English version coming soon!');
-                        }
-                    }
-                    // Si es español, no hacer nada (ya estamos en español)
-                });
-            });
-        })();
-    </script>
 
 </body>
 </html>
