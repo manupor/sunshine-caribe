@@ -6,9 +6,9 @@
 /* ===== CSS VARIABLES ===== */
 :root {
     /* Paleta Inspirada en el Logo de Sunshine Caribe */
-    --sc-primary:       #005a6a; /* Azul Océano Profundo */
-    --sc-primary-dark:  #00323c; /* Azul Abismo */
-    --sc-primary-light: #26c6da; /* Turquesa Caribe */
+    --sc-primary:       #00a8cc; /* Turquesa Caribe Vibrante (Más claro y nítido) */
+    --sc-primary-dark:  #007ea7; /* Azul Océano Profundo */
+    --sc-primary-light: #48cae4; /* Turquesa Brillante */
     --sc-secondary:     #f9d423; /* Amarillo Sol Radiante */
     --sc-secondary-dark:#f39c12; /* Ámbar Atardecer */
     --sc-accent:        #ff6b35; /* Naranja Coral */
