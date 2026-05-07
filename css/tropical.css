@@ -7,18 +7,18 @@
 :root {
     /* Paleta Inspirada en el Logo de Sunshine Caribe */
     --sc-primary:       #00a8cc; /* Turquesa Caribe Vibrante (Más claro y nítido) */
-    --sc-primary-dark:  #007ea7; /* Azul Océano Profundo */
+    --sc-primary-dark:  #005a6a; /* Azul Océano Vibrante (Igual al Footer) */
     --sc-primary-light: #48cae4; /* Turquesa Brillante */
     --sc-secondary:     #f9d423; /* Amarillo Sol Radiante */
     --sc-secondary-dark:#f39c12; /* Ámbar Atardecer */
     --sc-accent:        #ff6b35; /* Naranja Coral */
     --sc-green:         #2ecc71; /* Verde Esmeralda Vibrante (Pura Vida) */
-    --sc-dark:          #002b36; /* Azul Océano Profundo (No Negro) */
+    --sc-dark:          #005a6a; /* Azul Océano Vibrante (Igual al Footer - No más verde oscuro) */
     --sc-light:         #f0f7f8; /* Arena Blanca */
-    --sc-text:          #073642; /* Azul Petróleo Profundo */
-    --sc-text-muted:    #586e75;
+    --sc-text:          #005a6a; /* Azul Océano Vibrante para texto principal */
+    --sc-text-muted:    #007ea7; /* Azul Océano un poco más claro para texto secundario */
     --sc-white:         #ffffff;
-    --sc-border:        rgba(0, 43, 54, 0.1);
+    --sc-border:        rgba(0, 90, 106, 0.1);
     
     --font-heading:     'Playfair Display', Georgia, serif;
     --font-body:        'Lato', sans-serif;
@@ -237,7 +237,7 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
 header.fixed {
     border-bottom: 1px solid rgba(255,255,255,0.1) !important;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    background: rgba(0, 168, 204, 0.85) !important; /* Celeste Vibrante con transparencia */
+    background: rgba(0, 168, 204, 0.85) !important; /* Celeste Turquesa Vibrante */
     backdrop-filter: blur(15px) saturate(180%);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
     padding: 12px 0 !important;
@@ -253,7 +253,7 @@ header.fixed.transparent {
 header.fixed.scrolled,
 header.fixed.is-sticky,
 header.scroll {
-    background: #005a6a !important; /* Igual al color del footer (Azul Océano Vibrante) */
+    background: rgba(0, 90, 106, 0.95) !important; /* Igual al color del footer (#005a6a) con transparencia */
     box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
     backdrop-filter: blur(10px);
 }
