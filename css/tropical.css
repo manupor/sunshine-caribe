@@ -258,7 +258,7 @@ header.scroll {
     backdrop-filter: blur(10px);
 }
 header.bg-solid {
-    background: var(--sc-primary) !important;
+    background: #00a8cc !important; /* Turquesa Caribe Vibrante para el fondo sólido */
 }
 /* Nav links white on hero */
 header .navbar-nav > li > a {
