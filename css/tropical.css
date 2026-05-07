@@ -5,28 +5,35 @@
 
 /* ===== CSS VARIABLES ===== */
 :root {
-    --sc-primary:       #1e88e5;
-    --sc-primary-dark:  #1565c0;
-    --sc-primary-light: #64b5f6;
-    --sc-secondary:     #ffd54f;
-    --sc-accent:        #ff6b35;
-    --sc-coral:         #ff4757;
-    --sc-green:         #00b894;
-    --sc-dark:          #2d3436;
-    --sc-light:         #f8f9fa;
-    --sc-text:          #2d3436;
-    --sc-text-muted:    #636e72;
+    /* Paleta Inspirada en el Logo de Sunshine Caribe */
+    --sc-primary:       #005a6a; /* Azul Océano Profundo */
+    --sc-primary-dark:  #00323c; /* Azul Abismo */
+    --sc-primary-light: #26c6da; /* Turquesa Caribe */
+    --sc-secondary:     #f9d423; /* Amarillo Sol Radiante */
+    --sc-secondary-dark:#f39c12; /* Ámbar Atardecer */
+    --sc-accent:        #ff6b35; /* Naranja Coral */
+    --sc-green:         #00b894; /* Verde Jungla */
+    --sc-dark:          #0a1415; /* Negro Carbón */
+    --sc-light:         #f0f7f8; /* Arena Blanca */
+    --sc-text:          #1e272e; /* Gris Profundo */
+    --sc-text-muted:    #576574;
     --sc-white:         #ffffff;
-    --sc-border:        #e9ecef;
+    --sc-border:        rgba(0, 90, 106, 0.1);
+    
     --font-heading:     'Playfair Display', Georgia, serif;
     --font-body:        'Lato', sans-serif;
-    --transition:       all 0.3s ease;
-    --shadow-sm:        0 4px 20px rgba(0,0,0,0.06);
-    --shadow-md:        0 8px 30px rgba(0,0,0,0.1);
-    --shadow-lg:        0 16px 50px rgba(0,0,0,0.12);
-    --radius-sm:        6px;
-    --radius-md:        12px;
-    --radius-lg:        20px;
+    
+    --transition:       all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --shadow-sm:        0 8px 15px rgba(0,0,0,0.05);
+    --shadow-md:        0 12px 30px rgba(0,0,0,0.08);
+    --shadow-lg:        0 20px 50px rgba(0,50,60,0.15);
+    
+    --radius-sm:        8px;
+    --radius-md:        16px;
+    --radius-lg:        24px;
+    
+    --glass-bg:         rgba(255, 255, 255, 0.9);
+    --glass-border:     rgba(255, 255, 255, 0.2);
 }
 
 /* ===== BASE OVERRIDES ===== */
@@ -81,31 +88,31 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
     background: var(--sc-primary-dark);
     border-color: var(--sc-primary-dark);
     color: #fff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(30,136,229,0.35);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0,90,106,0.3);
 }
 
 .sc-btn-secondary {
-    background: var(--sc-secondary);
-    border: 2px solid var(--sc-secondary);
+    background: linear-gradient(135deg, var(--sc-secondary) 0%, var(--sc-secondary-dark) 100%);
+    border: none;
     color: #000000 !important;
     border-radius: var(--radius-sm);
-    padding: 11px 28px;
+    padding: 12px 30px;
     font-family: var(--font-body);
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     font-size: 0.82em;
     transition: var(--transition);
     display: inline-block;
     cursor: pointer;
+    box-shadow: 0 6px 15px rgba(243,156,18,0.25);
 }
 .sc-btn-secondary:hover {
-    background: #ffca28;
-    border-color: #ffca28;
+    background: linear-gradient(135deg, #fff 0%, var(--sc-secondary) 100%);
     color: #000000 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(255,213,79,0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(243,156,18,0.4);
 }
 
 .sc-btn-outline {
@@ -228,13 +235,12 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
 
 /* ===== HEADER / NAVBAR ===== */
 header.fixed {
-    border-bottom: none !important;
-    transition: background 0.4s ease, box-shadow 0.4s ease !important;
-    background: var(--sc-dark) !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
-    padding: 15px 0 8px 0 !important;
-    min-height: 75px;
-    margin: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    background: rgba(10, 20, 21, 0.8) !important;
+    backdrop-filter: blur(15px) saturate(180%);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+    padding: 12px 0 !important;
 }
 header.fixed .container {
     padding-top: 5px !important;
@@ -469,10 +475,10 @@ header.bg-solid ~ .page_title {
     position: absolute;
     inset: 0;
     background: linear-gradient(
-        135deg,
-        rgba(0,50,60,0.60) 0%,
-        rgba(0,77,87,0.50) 50%,
-        rgba(26,60,64,0.45) 100%
+        165deg,
+        rgba(0,50,60,0.75) 0%,
+        rgba(0,90,106,0.40) 50%,
+        rgba(249,212,35,0.15) 100%
     );
 }
 .sc-hero-content {
@@ -525,12 +531,14 @@ header.bg-solid ~ .page_title {
 
 /* Quick Book Card */
 .sc-quick-book {
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(12px);
-    border-radius: var(--radius-md);
-    padding: 32px 28px;
-    box-shadow: 0 24px 64px rgba(0,0,0,0.25);
-    border-top: 4px solid var(--sc-primary);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius-lg);
+    padding: 35px 30px;
+    box-shadow: 0 30px 60px rgba(0, 30, 40, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-top: 5px solid var(--sc-secondary);
+    transform: translateY(-20px);
 }
 .sc-quick-book h4 {
     color: var(--sc-primary);
@@ -648,13 +656,15 @@ header.bg-solid ~ .page_title {
     margin-bottom: 30px;
     border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     background: #fff;
     transition: var(--transition);
+    border: 1px solid var(--sc-border);
 }
 .sc-room-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 55px rgba(30,136,229,0.16);
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(0,90,106,0.2);
 }
 .sc-room-card figure { margin: 0; position: relative; }
 .sc-room-badge {
@@ -769,7 +779,11 @@ header.bg-solid ~ .page_title {
 .sc-pv-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,40,50,0.55) 0%, rgba(0,70,80,0.65) 100%);
+    background: linear-gradient(
+        to bottom,
+        rgba(0,50,60,0.4) 0%,
+        var(--sc-primary-dark) 100%
+    );
 }
 .sc-pv-content { position: relative; z-index: 2; }
 .sc-palm-icon { 
@@ -1456,7 +1470,7 @@ body {
 
 /* ===== LOADING SCREEN ===== */
 #loading {
-    background: linear-gradient(135deg, #1e88e5 0%, #00b894 100%);
+    background: radial-gradient(circle at center, var(--sc-primary) 0%, var(--sc-primary-dark) 100%);
     position: relative;
     overflow: hidden;
 }
