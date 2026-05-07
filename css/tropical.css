@@ -12,7 +12,7 @@
     --sc-secondary:     #f9d423; /* Amarillo Sol Radiante */
     --sc-secondary-dark:#f39c12; /* Ámbar Atardecer */
     --sc-accent:        #ff6b35; /* Naranja Coral */
-    --sc-green:         #00b894; /* Verde Jungla */
+    --sc-green:         #2ecc71; /* Verde Esmeralda Vibrante (Pura Vida) */
     --sc-dark:          #002b36; /* Azul Océano Profundo (No Negro) */
     --sc-light:         #f0f7f8; /* Arena Blanca */
     --sc-text:          #073642; /* Azul Petróleo Profundo */
@@ -631,12 +631,13 @@ header.bg-solid ~ .page_title {
 .sc-feature-icon {
     width: 62px;
     height: 62px;
-    background: linear-gradient(135deg, var(--sc-primary), var(--sc-primary-light));
+    background: linear-gradient(135deg, var(--sc-green), var(--sc-primary-light));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
 }
 .sc-feature-icon i { font-size: 22px; color: #fff; }
 .sc-feature-box h5 {
