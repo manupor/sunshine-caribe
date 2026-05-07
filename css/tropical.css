@@ -253,7 +253,7 @@ header.fixed.transparent {
 header.fixed.scrolled,
 header.fixed.is-sticky,
 header.scroll {
-    background: rgba(0, 142, 176, 0.95) !important; /* Celeste un poco más oscuro con transparencia para scroll */
+    background: #005a6a !important; /* Igual al color del footer (Azul Océano Vibrante) */
     box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
     backdrop-filter: blur(10px);
 }
