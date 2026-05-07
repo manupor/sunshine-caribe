@@ -6,9 +6,9 @@
 /* ===== CSS VARIABLES ===== */
 :root {
     /* Paleta Inspirada en el Logo de Sunshine Caribe */
-    --sc-primary:       #7bed9f; /* Verde Claro Vibrante (Menta/Lima) */
-    --sc-primary-dark:  #2ed573; /* Verde Esmeralda más intenso */
-    --sc-primary-light: #b8f2e6; /* Verde Agua muy suave */
+    --sc-primary:       #00a8cc; /* Turquesa Caribe Vibrante (Más claro y nítido) */
+    --sc-primary-dark:  #005a6a; /* Azul Océano Vibrante (Igual al Footer) */
+    --sc-primary-light: #48cae4; /* Turquesa Brillante */
     --sc-secondary:     #f9d423; /* Amarillo Sol Radiante */
     --sc-secondary-dark:#f39c12; /* Ámbar Atardecer */
     --sc-accent:        #ff6b35; /* Naranja Coral */
@@ -237,7 +237,7 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
 header.fixed {
     border-bottom: 1px solid rgba(255,255,255,0.1) !important;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    background: rgba(123, 237, 159, 0.9) !important; /* Verde Claro Vibrante con transparencia */
+    background: rgba(0, 168, 204, 0.85) !important; /* Celeste Turquesa Vibrante */
     backdrop-filter: blur(15px) saturate(180%);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
     padding: 12px 0 !important;
@@ -247,18 +247,18 @@ header.fixed .container {
     padding-bottom: 5px !important;
 }
 header.fixed.transparent {
-    background: rgba(123, 237, 159, 0.85) !important;
+    background: rgba(0, 168, 204, 0.9) !important;
     backdrop-filter: blur(10px);
 }
 header.fixed.scrolled,
 header.fixed.is-sticky,
 header.scroll {
-    background: #58cc86 !important; /* Un verde un poco más intenso para el scroll */
+    background: rgba(0, 90, 106, 0.95) !important; /* Igual al color del footer (#005a6a) con transparencia */
     box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
     backdrop-filter: blur(10px);
 }
 header.bg-solid {
-    background: #7bed9f !important; /* Verde Claro Vibrante para fondo sólido */
+    background: #00a8cc !important; /* Turquesa Caribe Vibrante para el fondo sólido */
 }
 /* Nav links white on hero */
 header .navbar-nav > li > a {
@@ -477,8 +477,8 @@ header.bg-solid ~ .page_title {
     inset: 0;
     background: linear-gradient(
         165deg,
-        rgba(123, 237, 159, 0.4) 0%, /* Verde Claro */
-        rgba(0, 90, 106, 0.3) 50%, /* Azul Océano */
+        rgba(0, 168, 204, 0.5) 0%, /* Celeste Turquesa */
+        rgba(0, 142, 176, 0.3) 50%, /* Celeste Profundo */
         rgba(249, 212, 35, 0.1) 100% /* Toque de Sol */
     );
 }
