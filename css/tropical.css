@@ -877,17 +877,17 @@ header.bg-solid ~ .page_title {
 .sc-contact-item p { margin: 0; font-size: 0.9em; line-height: 1.65; }
 
 /* ===== FOOTER ===== */
-footer .inner { background: var(--sc-dark) !important; padding: 70px 0 40px; }
-footer .inner p { color: rgba(255,255,255,0.62); font-size: 0.9em; line-height: 1.7; }
+footer .inner { background: #005a6a !important; padding: 70px 0 40px; } /* Azul Océano Vibrante */
+footer .inner p { color: rgba(255,255,255,0.8); font-size: 0.9em; line-height: 1.7; }
 footer .inner h5 {
-    color: #fff;
+    color: var(--sc-secondary); /* Amarillo Sol para los títulos del footer */
     font-family: var(--font-body);
     font-weight: 700;
     letter-spacing: 2px;
     font-size: 0.82em;
     text-transform: uppercase;
     padding-bottom: 14px;
-    border-bottom: 2px solid var(--sc-primary);
+    border-bottom: 2px solid var(--sc-secondary);
     margin-bottom: 22px;
 }
 footer .useful_links li { margin-bottom: 8px; }
@@ -908,11 +908,11 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 .sc-footer-logo { margin-bottom: 22px; }
 
 .subfooter {
-    background: rgba(0, 43, 54, 0.5) !important;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding: 18px 0;
+    background: #004d5a !important; /* Un tono más oscuro del mismo azul para el subfooter */
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 22px 0;
 }
-.subfooter .copyrights { color: rgba(255,255,255,0.45); font-size: 0.84em; line-height: 36px; }
+.subfooter .copyrights { color: rgba(255,255,255,0.7); font-size: 0.84em; line-height: 36px; }
 .subfooter .copyrights a { color: var(--sc-secondary); }
 .subfooter .social_media a {
     background: rgba(255,255,255,0.1);
