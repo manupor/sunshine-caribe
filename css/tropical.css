@@ -253,8 +253,8 @@ header.fixed.transparent {
 header.fixed.scrolled,
 header.fixed.is-sticky,
 header.scroll {
-    background: var(--sc-primary) !important;
-    box-shadow: 0 2px 24px rgba(0,0,0,0.25) !important;
+    background: #008eb0 !important; /* Un celeste un poco más oscuro para mejor contraste al hacer scroll */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
 }
 header.bg-solid {
     background: var(--sc-primary) !important;
