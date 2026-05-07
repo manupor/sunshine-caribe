@@ -237,9 +237,9 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
 header.fixed {
     border-bottom: 1px solid rgba(255,255,255,0.1) !important;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    background: rgba(0, 168, 204, 0.95) !important;
+    background: rgba(0, 168, 204, 0.85) !important; /* Celeste Vibrante */
     backdrop-filter: blur(15px) saturate(180%);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
     padding: 12px 0 !important;
 }
 header.fixed .container {
@@ -476,9 +476,9 @@ header.bg-solid ~ .page_title {
     inset: 0;
     background: linear-gradient(
         165deg,
-        rgba(0,50,60,0.75) 0%,
-        rgba(0,90,106,0.40) 50%,
-        rgba(249,212,35,0.15) 100%
+        rgba(0, 168, 204, 0.5) 0%, /* Celeste Turquesa */
+        rgba(0, 142, 176, 0.3) 50%, /* Celeste Profundo */
+        rgba(249, 212, 35, 0.1) 100% /* Toque de Sol */
     );
 }
 .sc-hero-content {
