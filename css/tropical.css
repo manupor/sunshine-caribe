@@ -5,19 +5,19 @@
 
 /* ===== CSS VARIABLES ===== */
 :root {
-    --sc-primary:       #006d77;
-    --sc-primary-dark:  #004d57;
-    --sc-primary-light: #83c5be;
-    --sc-secondary:     #e9c46a;
-    --sc-accent:        #f4a261;
-    --sc-coral:         #e76f51;
-    --sc-green:         #40916c;
-    --sc-dark:          #1a3c40;
-    --sc-light:         #edf6f9;
-    --sc-text:          #3d405b;
-    --sc-text-muted:    #6b7280;
+    --sc-primary:       #1e88e5;
+    --sc-primary-dark:  #1565c0;
+    --sc-primary-light: #64b5f6;
+    --sc-secondary:     #ffd54f;
+    --sc-accent:        #ff6b35;
+    --sc-coral:         #ff4757;
+    --sc-green:         #00b894;
+    --sc-dark:          #2d3436;
+    --sc-light:         #f8f9fa;
+    --sc-text:          #2d3436;
+    --sc-text-muted:    #636e72;
     --sc-white:         #ffffff;
-    --sc-border:        #e5eaed;
+    --sc-border:        #e9ecef;
     --font-heading:     'Playfair Display', Georgia, serif;
     --font-body:        'Lato', sans-serif;
     --transition:       all 0.3s ease;
@@ -82,7 +82,7 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
     border-color: var(--sc-primary-dark);
     color: #fff !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(0,109,119,0.35);
+    box-shadow: 0 6px 22px rgba(30,136,229,0.35);
 }
 
 .sc-btn-secondary {
@@ -101,11 +101,11 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
     cursor: pointer;
 }
 .sc-btn-secondary:hover {
-    background: #d4a842;
-    border-color: #d4a842;
+    background: #ffca28;
+    border-color: #ffca28;
     color: #000000 !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(233,196,106,0.4);
+    box-shadow: 0 6px 22px rgba(255,213,79,0.4);
 }
 
 .sc-btn-outline {
@@ -493,7 +493,7 @@ header.bg-solid ~ .page_title {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 20px;
-    border: 1px solid rgba(233,196,106,0.35);
+    border: 1px solid rgba(255,107,53,0.35);
 }
 .sc-hero-text h1 {
     color: #fff;
@@ -556,7 +556,7 @@ header.bg-solid ~ .page_title {
 }
 .sc-quick-book .form-control:focus {
     border-color: var(--sc-primary);
-    box-shadow: 0 0 0 3px rgba(0,109,119,0.12);
+    box-shadow: 0 0 0 3px rgba(30,136,229,0.12);
     outline: none;
 }
 .sc-quick-book .form-group { margin-bottom: 12px; }
@@ -617,7 +617,7 @@ header.bg-solid ~ .page_title {
 }
 .sc-feature-box:hover {
     transform: translateY(-7px);
-    box-shadow: 0 16px 44px rgba(0,109,119,0.13);
+    box-shadow: 0 16px 44px rgba(30,136,229,0.13);
     border-bottom-color: var(--sc-primary);
 }
 .sc-feature-icon {
@@ -654,7 +654,7 @@ header.bg-solid ~ .page_title {
 }
 .sc-room-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 55px rgba(0,109,119,0.16);
+    box-shadow: 0 20px 55px rgba(30,136,229,0.16);
 }
 .sc-room-card figure { margin: 0; position: relative; }
 .sc-room-badge {
@@ -952,7 +952,7 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 }
 .sc-room-list-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 16px 50px rgba(0,109,119,0.14);
+    box-shadow: 0 16px 50px rgba(30,136,229,0.14);
 }
 .sc-room-list-img {
     flex: 0 0 330px;
@@ -1039,7 +1039,7 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 }
 .sc-contact-form .form-control:focus {
     border-color: var(--sc-primary);
-    box-shadow: 0 0 0 3px rgba(0,109,119,0.12);
+    box-shadow: 0 0 0 3px rgba(30,136,229,0.12);
     outline: none;
 }
 .sc-contact-form .form-group { margin-bottom: 18px; }
@@ -1456,7 +1456,7 @@ body {
 
 /* ===== LOADING SCREEN ===== */
 #loading {
-    background: linear-gradient(135deg, #006d77 0%, #004d57 100%);
+    background: linear-gradient(135deg, #1e88e5 0%, #00b894 100%);
     position: relative;
     overflow: hidden;
 }
@@ -1468,7 +1468,7 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(222,182,102,0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
     animation: sc-bg-pulse 4s ease-in-out infinite;
 }
 
@@ -1508,7 +1508,7 @@ body {
     transform: translate(-50%, -50%);
     width: 250px;
     height: 250px;
-    background: radial-gradient(circle, rgba(222,182,102,0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255,213,79,0.25) 0%, transparent 70%);
     border-radius: 50%;
     animation: sc-logo-glow 2s ease-in-out infinite;
 }
