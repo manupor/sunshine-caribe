@@ -1392,7 +1392,7 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 /* Forzar visibilidad del texto en scroll y bg-solid */
 header.scroll #main_menu .navbar-nav li.sc-language-selector > a,
 header.bg-solid #main_menu .navbar-nav li.sc-language-selector > a {
-    color: #fff !important;
+    color: #008eb0 !important; /* Azul en lugar de blanco */
     padding: 25px 14px 18px 14px !important;
 }
 
