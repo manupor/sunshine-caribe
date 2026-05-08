@@ -253,12 +253,12 @@ header.fixed.transparent {
 header.fixed.scrolled,
 header.fixed.is-sticky,
 header.scroll {
-    background: rgba(0, 90, 106, 0.95) !important; /* Igual al color del footer (#005a6a) con transparencia */
+    background: var(--sc-primary-dark) !important; /* Uso de variable para evitar hardcoding */
     box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
     backdrop-filter: blur(10px);
 }
 header.bg-solid {
-    background: #00a8cc !important; /* Turquesa Caribe Vibrante para el fondo sólido */
+    background: var(--sc-primary) !important; /* Uso de variable para evitar hardcoding */
 }
 /* Nav links white on hero */
 header .navbar-nav > li > a {
@@ -877,7 +877,7 @@ header.bg-solid ~ .page_title {
 .sc-contact-item p { margin: 0; font-size: 0.9em; line-height: 1.65; }
 
 /* ===== FOOTER ===== */
-footer .inner { background: #005a6a !important; padding: 70px 0 40px; } /* Azul Océano Vibrante */
+footer .inner { background: var(--sc-primary-dark) !important; padding: 70px 0 40px; } /* Uso de variable */
 footer .inner p { color: rgba(255,255,255,0.8); font-size: 0.9em; line-height: 1.7; }
 footer .inner h5 {
     color: var(--sc-secondary); /* Amarillo Sol para los títulos del footer */
@@ -1415,7 +1415,7 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 
 /* Dropdown menu */
 #main_menu .navbar-nav .sc-language-selector .sc-lang-dropdown {
-    background: #005a6a !important; /* Igual al color del footer y scroll */
+    background: var(--sc-primary-dark) !important; /* Uso de variable */
     border: 1px solid rgba(255,255,255,0.15) !important;
     border-radius: var(--radius-sm) !important;
     box-shadow: var(--shadow-md) !important;
