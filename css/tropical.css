@@ -237,28 +237,20 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
 header.fixed {
     border-bottom: 1px solid rgba(255,255,255,0.1) !important;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    background: rgba(0, 168, 204, 0.85) !important; /* Celeste Turquesa Vibrante */
+    background: rgba(0, 168, 204, 0.95) !important; /* Celeste Turquesa Vibrante Siempre */
     backdrop-filter: blur(15px) saturate(180%);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
     padding: 12px 0 !important;
 }
-header.fixed .container {
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
-}
-header.fixed.transparent {
-    background: rgba(0, 168, 204, 0.9) !important;
-    backdrop-filter: blur(10px);
-}
 header.fixed.scrolled,
 header.fixed.is-sticky,
 header.scroll {
-    background: var(--sc-primary-dark) !important; /* Uso de variable para evitar hardcoding */
+    background: rgba(0, 168, 204, 0.98) !important; /* Mismo Celeste Turquesa en scroll */
     box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
 }
 header.bg-solid {
-    background: var(--sc-primary) !important; /* Uso de variable para evitar hardcoding */
+    background: rgba(0, 168, 204, 1) !important; /* Mismo Celeste Turquesa sólido en páginas internas */
 }
 /* Nav links white on hero */
 header .navbar-nav > li > a {
