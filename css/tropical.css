@@ -310,7 +310,7 @@ header.scroll .navbar-brand img {
     display: flex !important;
     align-items: center !important;
     height: 100% !important;
-    margin-left: 60px !important; /* Distancia prudente y cercana al logo */
+    margin-left: 40px !important; /* Distancia uniforme */
 }
 
 #main_menu .navbar-nav {
@@ -319,70 +319,61 @@ header.scroll .navbar-brand img {
     display: flex !important;
     align-items: center !important;
     height: 100% !important;
-}
-
-header .navbar-nav > li,
-#main_menu .navbar-nav > li,
-#main_menu .navbar-nav li.sc-language-selector,
-#main_menu .navbar-nav li.menu_button {
-    display: flex !important;
-    align-items: center !important;
-    height: 100px !important; /* Altura fija del Navbar */
-    float: none !important;
-    margin: 0 !important;
+    list-style: none !important;
     padding: 0 !important;
 }
 
+header .navbar-nav > li,
+#main_menu .navbar-nav > li {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+/* Tipografía y Links Unificados — Incluyendo Idioma */
 header .navbar-nav > li > a,
-#main_menu .navbar-nav > li > a,
-#main_menu .navbar-nav li.sc-language-selector > a {
+#main_menu .navbar-nav > li > a {
+    color: #008eb0 !important;
+    font-family: var(--font-body) !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.2px !important;
+    font-size: 11px !important;
+    padding: 0 15px !important; /* Espaciado uniforme para todos los tabs */
+    height: 100% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    height: 100% !important;
-    padding: 0 15px !important;
-    margin: 0 !important;
-    line-height: 100px !important; /* Forzar altura de línea igual al contenedor */
-    vertical-align: middle !important;
-}
-
-/* Forzar color y estilo en idioma */
-#main_menu .navbar-nav li.sc-language-selector > a {
-    color: #008eb0 !important;
-    font-size: 11px !important;
-    font-weight: 700 !important;
+    transition: all 0.3s ease !important;
     text-transform: uppercase !important;
+    background: transparent !important;
+    line-height: 100px !important;
+    vertical-align: middle !important;
+    margin: 0 !important;
 }
 
-header .navbar-nav > li > a:hover,
-#main_menu .navbar-nav > li > a:hover {
-    color: var(--sc-secondary) !important; /* Dorado al hover */
-}
-
-/* Tab de Idioma - Sincronizado */
+/* El selector de idioma es un tab más, sin estilos especiales que lo separen */
 #main_menu .navbar-nav li.sc-language-selector {
-    display: flex !important;
-    align-items: center !important;
-    height: 100px !important;
-}
-#main_menu .navbar-nav li.sc-language-selector > a {
-    color: #008eb0 !important;
-    height: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    padding: 0 15px !important;
+    margin: 0 !important;
 }
 
-/* Botón Reservar - El CTA debe destacar simétricamente */
+#main_menu .navbar-nav li.sc-language-selector > a {
+    /* Hereda todo del estilo general de tabs arriba */
+}
+
+/* Botón Reservar - Sigue al final del flujo del menú */
 #main_menu .navbar-nav li.menu_button {
-    margin-left: 20px !important;
+    margin-left: 15px !important;
     display: flex !important;
     align-items: center !important;
-    height: 100px !important;
+    height: 100% !important;
 }
 
 #main_menu .navbar-nav li.menu_button a.button {
-    height: 45px !important; /* Altura fija para el botón */
+    height: 45px !important;
     padding: 0 28px !important;
     display: flex !important;
     align-items: center !important;
@@ -392,8 +383,8 @@ header .navbar-nav > li > a:hover,
     font-weight: 800 !important;
     text-transform: uppercase !important;
     letter-spacing: 1.5px !important;
-    background: var(--sc-secondary) !important; /* Amarillo Sol */
-    color: #ffffff !important; /* Letras Blancas */
+    background: var(--sc-secondary) !important;
+    color: #ffffff !important;
     border: 2px solid var(--sc-secondary) !important;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
     box-shadow: 0 4px 15px rgba(249, 212, 35, 0.3) !important;
@@ -401,8 +392,8 @@ header .navbar-nav > li > a:hover,
 
 #main_menu .navbar-nav li.menu_button a.button:active,
 #main_menu .navbar-nav li.menu_button a.button:focus {
-    background: #ffffff !important; /* Cambio a Blanco al estripar/clic */
-    color: #000000 !important; /* Letras Negras */
+    background: #ffffff !important;
+    color: #000000 !important;
     border-color: #ffffff !important;
     transform: scale(0.95);
 }
@@ -414,11 +405,12 @@ header .navbar-nav > li > a:hover,
 
 header .navbar-nav > li.active > a,
 #main_menu .navbar-nav > li.active > a {
-    color: var(--sc-primary) !important; /* Turquesa para el activo */
+    color: var(--sc-primary) !important;
 }
 
-#main_menu .navbar-nav li.sc-language-selector:hover > a {
-    color: var(--sc-secondary) !important;
+header .navbar-nav > li > a:hover,
+#main_menu .navbar-nav > li > a:hover {
+    color: var(--sc-secondary) !important; /* Dorado al hover */
 }
 
 /* Mobile Menu Button Color */
