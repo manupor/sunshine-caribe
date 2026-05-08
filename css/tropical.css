@@ -366,59 +366,35 @@ header .navbar-nav > li > a:hover,
 
 #main_menu .navbar-nav li.menu_button a.button {
     height: auto !important;
-    padding: 12px 25px !important;
-    border-radius: 4px !important;
+    padding: 12px 28px !important;
+    border-radius: 6px !important;
     font-size: 11px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    background: var(--sc-secondary) !important; /* Amarillo Sol */
+    color: #ffffff !important; /* Letras Blancas */
+    border: 2px solid var(--sc-secondary) !important;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    box-shadow: 0 4px 15px rgba(249, 212, 35, 0.3) !important;
+}
+
+#main_menu .navbar-nav li.menu_button a.button:active,
+#main_menu .navbar-nav li.menu_button a.button:focus {
+    background: #ffffff !important; /* Cambio a Blanco al estripar/clic */
+    color: #000000 !important; /* Letras Negras */
+    border-color: #ffffff !important;
+    transform: scale(0.95);
+}
+
+#main_menu .navbar-nav li.menu_button a.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 212, 35, 0.4) !important;
 }
 
 header .navbar-nav > li.active > a,
 #main_menu .navbar-nav > li.active > a {
     color: var(--sc-primary) !important; /* Turquesa para el activo */
-}
-
-/* Selector de Idioma — Forzado a Azul Global y Alineación Simétrica */
-#main_menu .navbar-nav li.sc-language-selector,
-header li.sc-language-selector {
-    display: flex !important;
-    align-items: center !important;
-    height: 100% !important;
-}
-
-#main_menu .navbar-nav li.sc-language-selector > a,
-header li.sc-language-selector > a,
-.sc-language-selector a {
-    color: #008eb0 !important; /* Azul Océano Forzado */
-    background: transparent !important;
-    font-family: var(--font-body) !important;
-    font-weight: 700 !important;
-    letter-spacing: 1px !important;
-    font-size: 11px !important;
-    padding: 0 15px !important;
-    height: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    text-transform: uppercase !important;
-}
-
-#main_menu .navbar-nav li.sc-language-selector > a .caret,
-header li.sc-language-selector > a .caret {
-    border-top-color: #008eb0 !important;
-}
-
-/* Botón Reservar — Alineación Simétrica */
-#main_menu .navbar-nav li.menu_button {
-    display: flex !important;
-    align-items: center !important;
-    height: 100% !important;
-    margin-left: 15px !important;
-}
-
-#main_menu .navbar-nav li.menu_button a.button {
-    margin: 0 !important;
-    padding: 10px 20px !important; /* Padding interno del botón */
-    height: auto !important; /* El botón no debe ocupar el 100% del alto */
-    display: inline-flex !important;
-    align-items: center !important;
 }
 
 #main_menu .navbar-nav li.sc-language-selector:hover > a {
