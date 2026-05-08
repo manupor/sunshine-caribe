@@ -7,18 +7,18 @@
 :root {
     /* Paleta Inspirada en el Logo de Sunshine Caribe */
     --sc-primary:       #00a8cc; /* Turquesa Caribe Vibrante (Más claro y nítido) */
-    --sc-primary-dark:  #005a6a; /* Azul Océano Vibrante (Igual al Footer) */
+    --sc-primary-dark:  #008eb0; /* Celeste Profundo para contraste, no verde */
     --sc-primary-light: #48cae4; /* Turquesa Brillante */
     --sc-secondary:     #f9d423; /* Amarillo Sol Radiante */
     --sc-secondary-dark:#f39c12; /* Ámbar Atardecer */
     --sc-accent:        #ff6b35; /* Naranja Coral */
     --sc-green:         #2ecc71; /* Verde Esmeralda Vibrante (Pura Vida) */
-    --sc-dark:          #005a6a; /* Azul Océano Vibrante (Igual al Footer - No más verde oscuro) */
+    --sc-dark:          #008eb0; /* Celeste Profundo (Igual al Footer - No más verde oscuro) */
     --sc-light:         #f0f7f8; /* Arena Blanca */
-    --sc-text:          #005a6a; /* Azul Océano Vibrante para texto principal */
-    --sc-text-muted:    #007ea7; /* Azul Océano un poco más claro para texto secundario */
+    --sc-text:          #004d5a; /* Azul Océano muy profundo para texto principal */
+    --sc-text-muted:    #007ea7; /* Azul Océano para texto secundario */
     --sc-white:         #ffffff;
-    --sc-border:        rgba(0, 90, 106, 0.1);
+    --sc-border:        rgba(0, 168, 204, 0.1);
     
     --font-heading:     'Playfair Display', Georgia, serif;
     --font-body:        'Lato', sans-serif;
@@ -869,7 +869,7 @@ header.bg-solid ~ .page_title {
 .sc-contact-item p { margin: 0; font-size: 0.9em; line-height: 1.65; }
 
 /* ===== FOOTER ===== */
-footer .inner { background: var(--sc-primary-dark) !important; padding: 70px 0 40px; } /* Uso de variable */
+footer .inner { background: #008eb0 !important; padding: 70px 0 40px; } /* Celeste Profundo */
 footer .inner p { color: rgba(255,255,255,0.8); font-size: 0.9em; line-height: 1.7; }
 footer .inner h5 {
     color: var(--sc-secondary); /* Amarillo Sol para los títulos del footer */
@@ -900,7 +900,7 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 .sc-footer-logo { margin-bottom: 22px; }
 
 .subfooter {
-    background: #004d5a !important; /* Un tono más oscuro del mismo azul para el subfooter */
+    background: #007ea7 !important; /* Celeste más oscuro */
     border-top: 1px solid rgba(255,255,255,0.1);
     padding: 22px 0;
 }
@@ -941,7 +941,7 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 .sc-page-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0, 168, 204, 0.8), rgba(0, 90, 106, 0.7)); /* Azul Océano Vibrante */
+    background: linear-gradient(135deg, rgba(0, 168, 204, 0.8), rgba(0, 142, 176, 0.7)); /* Solo Celestes */
 }
 .sc-page-hero-content { position: relative; z-index: 2; }
 .sc-page-hero h1 {
