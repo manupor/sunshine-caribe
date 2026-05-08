@@ -233,69 +233,110 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
 .top_menu .top_menu_right > li > a:hover { color: var(--sc-secondary) !important; }
 .top_menu .top_menu_right > li i { color: var(--sc-secondary); }
 
-/* ===== HEADER / NAVBAR ===== */
+/* ===== HEADER / NAVBAR — FONDO BLANCO ===== */
 header.fixed {
-    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    border-bottom: 1px solid rgba(0, 142, 176, 0.1) !important;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    background: rgba(0, 168, 204, 0.95) !important; /* Celeste Turquesa Vibrante Siempre */
-    backdrop-filter: blur(15px) saturate(180%);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-    padding: 12px 0 !important;
+    background: #ffffff !important; /* Fondo Blanco */
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+    padding: 10px 0 !important;
 }
 header.fixed.scrolled,
 header.fixed.is-sticky,
 header.scroll {
-    background: rgba(0, 168, 204, 0.98) !important; /* Mismo Celeste Turquesa en scroll */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
-    backdrop-filter: blur(15px);
+    background: #ffffff !important; /* Fondo Blanco en scroll */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
 }
 header.bg-solid {
-    background: rgba(0, 168, 204, 1) !important; /* Mismo Celeste Turquesa sólido en páginas internas */
+    background: #ffffff !important; /* Fondo Blanco sólido */
 }
-/* Nav links white on hero */
+
+/* Nav links Azul en Navbar Blanco */
 header .navbar-nav > li > a {
-    color: rgba(255,255,255,0.92) !important;
+    color: #008eb0 !important; /* Azul Océano */
     font-family: var(--font-body) !important;
     font-weight: 700 !important;
     letter-spacing: 1.8px !important;
     font-size: 0.78em !important;
     padding: 25px 14px 18px 14px !important;
     transition: var(--transition) !important;
-    line-height: 1 !important;
+}
+header .navbar-nav > li > a:hover {
+    color: var(--sc-secondary) !important; /* Amarillo al hover */
+}
+header .navbar-nav > li.active > a {
+    color: var(--sc-primary) !important; /* Turquesa para el activo */
+}
+
+/* Ajuste Proporcional del Logo */
+header .navbar-brand {
+    height: auto !important;
+    padding: 5px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+header .navbar-brand img {
+    height: 65px !important; /* Altura ajustada */
+    width: auto !important; /* Proporcional */
+    max-height: none !important;
+    transition: transform 0.3s ease;
+}
+header.scroll .navbar-brand img {
+    height: 55px !important; /* Un poco más pequeño al scroll */
+}
+
+/* Language selector en azul */
+#main_menu .navbar-nav li.sc-language-selector > a {
+    color: #008eb0 !important; /* Azul */
+}
+#main_menu .navbar-nav li.sc-language-selector > a .caret {
+    border-top-color: #008eb0 !important;
+}
+
+/* Mobile Menu Button Color */
+header .mobile_menu_btn .icon-bar {
+    background: #008eb0 !important;
 }
 header .navbar-nav > li > a:hover,
 header .navbar-nav > li.active > a {
     color: var(--sc-secondary) !important;
 }
-/* Logo vertical centering */
-header .navbar-header .navbar-brand {
-    padding: 15px 0 8px 0 !important;
-    margin-top: 0 !important;
-    line-height: 1 !important;
+/* Ajuste Proporcional del Logo */
+header .navbar-brand {
+    height: 80px !important;
+    padding: 10px 0 !important;
     display: flex !important;
     align-items: center !important;
+    margin-top: 0 !important;
+}
+header .navbar-brand img {
+    height: 60px !important; /* Altura controlada */
+    width: auto !important; /* Mantiene proporción */
+    max-height: 80px !important;
+    transform: none !important; /* Eliminar escalas que deforman */
+    transition: all 0.3s ease;
+}
+header.scroll .navbar-brand {
     height: 70px !important;
 }
-/* Logo bigger without affecting navbar - uses transform */
-header .navbar-header .navbar-brand img {
-    height: 46px;
-    transform: scale(2.5);
-    transform-origin: left center;
-    transition: transform 0.3s ease;
+header.scroll .navbar-brand img {
+    height: 50px !important;
 }
 header.scroll .navbar-header .navbar-brand img {
-    transform: scale(2.2);
+    transform: none !important;
 }
 /* Mobile: smaller logo */
 @media (max-width: 991px) {
     header .navbar-header .navbar-brand img {
-        transform: scale(1.8);
+        transform: none !important;
+        height: 50px !important;
     }
     header.scroll .navbar-header .navbar-brand img {
-        transform: scale(1.5);
+        transform: none !important;
+        height: 40px !important;
     }
 }
-
 /* Top menu positioning */
 .top_menu {
     display: none !important;
