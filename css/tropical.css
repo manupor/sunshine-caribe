@@ -1388,44 +1388,43 @@ header.bg-solid #main_menu .navbar-nav li.sc-language-selector > a {
     border-width: 5px 4px 0;
 }
 
-/* Solución radical para que NADA corte el dropdown de idioma */
-.navbar-collapse, 
-.navbar-header, 
-header, 
-.wrapper,
-.nav,
-.navbar-nav {
+/* Solución DEFINTIVA para el Dropdown en Contacto y todas las pestañas */
+#main-header, 
+#main-header .container, 
+#main-header .navbar-header, 
+#main_menu, 
+#main_menu .navbar-nav,
+.wrapper {
     overflow: visible !important;
 }
 
-#main_menu {
+/* El selector de idioma debe ser relativo para contener al hijo absoluto */
+#main_menu .navbar-nav li.sc-language-selector {
+    position: relative !important;
     overflow: visible !important;
 }
 
-#main_menu .navbar-nav {
-    overflow: visible !important;
-}
-
-/* Forzar que el dropdown sea la capa más alta del universo */
+/* El dropdown con posición fija o absoluta reforzada */
 #main_menu .navbar-nav li.sc-language-selector .sc-lang-dropdown {
     display: none;
-    position: absolute;
+    position: absolute !important;
     top: 100% !important;
-    left: 0;
-    min-width: 150px;
-    z-index: 9999999 !important;
-    padding: 10px 0;
-    margin: 0;
-    list-style: none;
+    left: 0 !important;
+    min-width: 160px !important;
+    z-index: 99999999 !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
     background: #008eb0 !important;
     border: 1px solid rgba(255,255,255,0.3) !important;
-    border-radius: var(--radius-sm) !important;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5) !important;
-    visibility: visible !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4) !important;
 }
 
+/* Asegurar que el hover se mantenga */
 #main_menu .navbar-nav li.sc-language-selector:hover .sc-lang-dropdown {
     display: block !important;
+    visibility: visible !important;
     opacity: 1 !important;
 }
 
