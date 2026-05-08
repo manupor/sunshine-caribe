@@ -237,13 +237,14 @@ header.scroll,
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
     padding: 0 !important;
     position: fixed !important;
-    top: 0 !important; /* Ahora al tope absoluto */
+    top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
     z-index: 10000 !important;
-    height: 75px !important;
-    display: block !important;
+    height: 100px !important; /* Altura aumentada para el logo más grande */
+    display: flex !important;
+    align-items: center !important;
     visibility: visible !important;
     opacity: 1 !important;
     transform: none !important;
@@ -253,25 +254,21 @@ header.scroll,
 header.scroll, 
 header.fixed-scroll {
     top: 0 !important; 
+    height: 90px !important; /* Un poco más pequeño al scroll pero manteniendo alineación */
 }
 
-/* Espaciado para el contenido principal (Hero) */
+/* Espaciado para el contenido principal (Hero) - Al ras */
 body {
-    padding-top: 75px !important; /* Ajustado al alto del navbar */
+    padding-top: 100px !important; /* Exactamente el alto del navbar */
 }
 body:has(header.bg-solid) {
-    padding-top: 75px !important;
-}
-@media (max-width: 991px) {
-    body {
-        padding-top: 75px !important;
-    }
+    padding-top: 100px !important;
 }
 
-/* Ajuste del Logo para que no se corte */
+/* Ajuste del Logo para que sea más grande y esté centrado verticalmente */
 header .navbar-brand,
 .navbar-header .navbar-brand {
-    height: 75px !important;
+    height: 100px !important;
     padding: 0 !important;
     margin: 0 !important;
     display: flex !important;
@@ -280,55 +277,53 @@ header .navbar-brand,
 }
 
 header .navbar-brand img {
-    height: 55px !important;
+    height: 85px !important; /* Logo más grande */
     width: auto !important;
     margin: 0 !important;
+    transition: all 0.3s ease;
 }
 
-/* Ajuste de los links del menú */
-header .navbar-nav > li > a {
-    padding: 30px 12px !important; /* Centrado vertical en 75px */
+header.scroll .navbar-brand img {
+    height: 75px !important;
 }
 
-/* Nav links más pequeños y centrados */
+/* Alineación Perfecta de los Tabs */
+#main_menu, 
+.navbar-collapse {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+#main_menu .navbar-nav {
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    float: right !important;
+}
+
+#main_menu .navbar-nav > li {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    float: none !important;
+}
+
 header .navbar-nav > li > a,
 #main_menu .navbar-nav > li > a {
     color: #008eb0 !important;
     font-family: var(--font-body) !important;
     font-weight: 700 !important;
     letter-spacing: 1px !important;
-    font-size: 10px !important; /* Texto pequeño como en la imagen */
-    padding: 28px 12px !important; /* Ajustado para el nuevo height de 70px */
+    font-size: 11px !important;
+    padding: 0 15px !important; /* Centrado flex */
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important; 
     transition: var(--transition) !important;
     background: transparent !important;
     text-transform: uppercase !important;
-}
-
-/* Espaciado para el contenido principal (Hero) */
-body {
-    padding-top: 140px !important; /* 40px TopBar + ~100px Header */
-}
-/* En móviles y páginas internas con bg-solid */
-body:has(header.bg-solid) {
-    padding-top: 140px !important;
-}
-@media (max-width: 991px) {
-    body {
-        padding-top: 120px !important;
-    }
-}
-
-/* Nav links Azul Global */
-header .navbar-nav > li > a,
-#main_menu .navbar-nav > li > a {
-    color: #008eb0 !important; /* Azul Océano */
-    font-family: var(--font-body) !important;
-    font-weight: 700 !important;
-    letter-spacing: 1.8px !important;
-    font-size: 0.78em !important;
-    padding: 38px 14px !important; /* Aumentado para centrar verticalmente en 100px height */
-    transition: var(--transition) !important;
-    background: transparent !important;
 }
 
 header .navbar-nav > li > a:hover,
