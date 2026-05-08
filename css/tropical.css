@@ -245,7 +245,7 @@ header.transparent,
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
-    z-index: 999999 !important; /* Z-INDEX EXTREMO */
+    z-index: 1000000 !important; /* Z-INDEX EXTREMO */
     height: 100px !important; 
     display: flex !important;
     align-items: center !important;
@@ -254,13 +254,12 @@ header.transparent,
     transform: none !important;
 }
 
-/* Ensure no JS or inherited class changes the height or top on scroll */
-header.scroll, 
 header.fixed-scroll,
 header.is-sticky {
     height: 100px !important;
     top: 0 !important;
     background: #ffffff !important;
+    position: fixed !important;
 }
 
 header .container {
@@ -275,7 +274,7 @@ header .container {
     position: relative !important;
 }
 
-/* Alineación del Logo - Clásico a la izquierda con padding correcto */
+/* Alineación del Logo - Clásico a la izquierda */
 header .navbar-header {
     float: none !important;
     display: flex !important;
@@ -337,12 +336,12 @@ header .navbar-nav > li,
 /* Tipografía y Links Unificados — Incluyendo Idioma */
 header .navbar-nav > li > a,
 #main_menu .navbar-nav > li > a {
-    color: #008eb0 !important;
+    color: #008eb0 !important; /* Azul Océano */
     font-family: var(--font-body) !important;
     font-weight: 700 !important;
     letter-spacing: 1.2px !important;
     font-size: 11px !important;
-    padding: 0 15px !important; /* Espaciado uniforme para todos los tabs */
+    padding: 0 15px !important; 
     height: 100% !important;
     display: flex !important;
     align-items: center !important;
@@ -355,13 +354,20 @@ header .navbar-nav > li > a,
     margin: 0 !important;
 }
 
-/* El selector de idioma es un tab más, sin estilos especiales que lo separen */
-#main_menu .navbar-nav li.sc-language-selector {
-    margin: 0 !important;
+/* Tab activo y hover */
+header .navbar-nav > li.active > a,
+#main_menu .navbar-nav > li.active > a {
+    color: var(--sc-primary) !important;
 }
 
-#main_menu .navbar-nav li.sc-language-selector > a {
-    /* Hereda todo del estilo general de tabs arriba */
+header .navbar-nav > li > a:hover,
+#main_menu .navbar-nav > li > a:hover {
+    color: var(--sc-secondary) !important; 
+}
+
+/* El selector de idioma es un tab más */
+#main_menu .navbar-nav li.sc-language-selector {
+    margin: 0 !important;
 }
 
 /* Botón Reservar - Sigue al final del flujo del menú */
@@ -388,6 +394,7 @@ header .navbar-nav > li > a,
     border: 2px solid var(--sc-secondary) !important;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
     box-shadow: 0 4px 15px rgba(249, 212, 35, 0.3) !important;
+    margin-left: 15px !important;
 }
 
 #main_menu .navbar-nav li.menu_button a.button:active,
@@ -403,16 +410,6 @@ header .navbar-nav > li > a,
     box-shadow: 0 6px 20px rgba(249, 212, 35, 0.4) !important;
 }
 
-header .navbar-nav > li.active > a,
-#main_menu .navbar-nav > li.active > a {
-    color: var(--sc-primary) !important;
-}
-
-header .navbar-nav > li > a:hover,
-#main_menu .navbar-nav > li > a:hover {
-    color: var(--sc-secondary) !important; /* Dorado al hover */
-}
-
 /* Mobile Menu Button Color */
 header .mobile_menu_btn .icon-bar {
     background: #008eb0 !important;
@@ -424,7 +421,7 @@ header#main-header {
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    z-index: 9999 !important;
+    z-index: 1000000 !important;
     transform: translateY(0) !important;
 }
 /* On pages without top menu (habitaciones, contacto) */
