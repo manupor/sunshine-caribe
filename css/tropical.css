@@ -1838,7 +1838,7 @@ body {
 
 /* ===== SCROLLED HEADER JS HOOK ===== */
 header.fixed.bg-solid {
-    background: var(--sc-dark) !important;
+    background: #ffffff !important; /* Forzado a Blanco en lugar del azul/verde oscuro */
     box-shadow: 0 2px 24px rgba(0,0,0,0.2) !important;
 }
 
