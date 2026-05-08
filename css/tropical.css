@@ -277,14 +277,14 @@ header .navbar-brand,
 }
 
 header .navbar-brand img {
-    height: 100px !important; /* Aumentado a 100px */
+    height: 85px !important; /* Reducido de 100px a 85px */
     width: auto !important;
     margin: 0 !important;
     transition: all 0.3s ease;
 }
 
 header.scroll .navbar-brand img {
-    height: 85px !important;
+    height: 70px !important; /* Reducido de 85px a 70px en scroll */
 }
 
 /* Alineación Perfecta de los Tabs */
