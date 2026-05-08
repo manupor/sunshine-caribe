@@ -1394,9 +1394,19 @@ header,
 .navbar-header,
 #main_menu,
 #main_menu .navbar-nav,
-.sc-language-selector {
+.sc-language-selector,
+section {
     overflow: visible !important;
     clip-path: none !important;
+}
+
+/* Evitar que Bootstrap corte el contenido */
+.navbar-collapse.collapse,
+.navbar-collapse.in,
+.navbar-collapse {
+    overflow: visible !important;
+    display: block !important;
+    height: auto !important;
 }
 
 /* El dropdown debe romper cualquier contenedor padre */
@@ -1405,9 +1415,9 @@ header,
     position: absolute !important;
     top: 100% !important;
     left: auto !important;
-    right: 0 !important; /* Alineado a la derecha para que no se salga de la pantalla */
+    right: 0 !important;
     min-width: 160px !important;
-    z-index: 2147483647 !important; /* Valor máximo de z-index posible */
+    z-index: 2147483647 !important;
     padding: 10px 0 !important;
     margin: 0 !important;
     list-style: none !important;
