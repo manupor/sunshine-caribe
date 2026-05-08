@@ -228,16 +228,16 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
     top: 0 !important;
     left: 0 !important;
     width: 100% !important;
-    height: 40px !important;
-    z-index: 10000 !important;
+    height: 45px !important; /* Un poco más de altura */
+    z-index: 10001 !important; /* Por encima del header */
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important; /* Centrado Horizontal */
+    justify-content: center !important;
 }
 .top_menu .container {
     width: 100% !important;
     display: flex !important;
-    justify-content: center !important; /* Centrado del contenido del container */
+    justify-content: center !important;
 }
 .top_menu .top_menu_right {
     float: none !important;
@@ -250,7 +250,8 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
 }
 .top_menu .top_menu_right > li {
     float: none !important;
-    display: inline-block !important;
+    display: inline-flex !important;
+    align-items: center !important;
     margin: 0 15px !important;
 }
 
@@ -265,11 +266,12 @@ header.scroll,
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
     backdrop-filter: blur(15px) !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
-    padding: 10px 0 !important;
+    padding: 0 !important; /* Eliminamos padding para control total */
     position: fixed !important;
-    top: 40px !important; /* Empieza después de la Top Bar */
+    top: 45px !important; /* IGUAL A LA ALTURA DE LA TOP BAR - CRITICO */
     width: 100% !important;
-    z-index: 9999 !important;
+    z-index: 10000 !important;
+    height: 100px !important; /* Altura fija para el navbar */
 }
 
 /* Espaciado para el contenido principal (Hero) */
@@ -294,7 +296,7 @@ header .navbar-nav > li > a,
     font-weight: 700 !important;
     letter-spacing: 1.8px !important;
     font-size: 0.78em !important;
-    padding: 25px 14px 18px 14px !important;
+    padding: 38px 14px !important; /* Aumentado para centrar verticalmente en 100px height */
     transition: var(--transition) !important;
     background: transparent !important;
 }
