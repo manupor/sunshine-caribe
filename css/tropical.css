@@ -321,7 +321,6 @@ header.scroll .navbar-brand img {
     height: 100% !important;
 }
 
-/* Alineación Vertical Maestra — Sincronización Total */
 header .navbar-nav > li,
 #main_menu .navbar-nav > li,
 #main_menu .navbar-nav li.sc-language-selector,
@@ -330,6 +329,8 @@ header .navbar-nav > li,
     align-items: center !important;
     height: 100px !important; /* Altura fija del Navbar */
     float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 header .navbar-nav > li > a,
@@ -340,8 +341,9 @@ header .navbar-nav > li > a,
     justify-content: center !important;
     height: 100% !important;
     padding: 0 15px !important;
-    line-height: 1 !important; /* Elimina cualquier desplazamiento por interlineado */
     margin: 0 !important;
+    line-height: 100px !important; /* Forzar altura de línea igual al contenedor */
+    vertical-align: middle !important;
 }
 
 /* Forzar color y estilo en idioma */
