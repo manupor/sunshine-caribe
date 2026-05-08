@@ -253,7 +253,7 @@ header.scroll,
 header .container {
     display: flex !important;
     align-items: center !important;
-    justify-content: space-between !important; /* Distribución clásica y equilibrada */
+    justify-content: flex-start !important; /* Alineación al inicio para permitir control de distancia */
     width: 100% !important;
     max-width: 1200px !important;
     height: 100% !important;
@@ -284,13 +284,13 @@ header .navbar-brand img {
     transition: all 0.3s ease;
 }
 
-/* Menú a la derecha para equilibrio visual simétrico */
+/* Menú a la derecha para equilibrio visual simétrico — ACERCADO AL LOGO */
 #main_menu {
     float: none !important;
     display: flex !important;
     align-items: center !important;
     height: 100% !important;
-    margin-left: auto !important; /* Empuja el menú a la derecha */
+    margin-left: 60px !important; /* Distancia prudente y cercana al logo */
 }
 
 #main_menu .navbar-nav {
