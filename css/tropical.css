@@ -311,17 +311,17 @@ header .navbar-brand {
     margin-top: 0 !important;
 }
 header .navbar-brand img {
-    height: 60px !important; /* Altura controlada */
+    height: 75px !important; /* Aumentado de 60px a 75px */
     width: auto !important; /* Mantiene proporción */
-    max-height: 80px !important;
+    max-height: 90px !important;
     transform: none !important; /* Eliminar escalas que deforman */
     transition: all 0.3s ease;
 }
 header.scroll .navbar-brand {
-    height: 70px !important;
+    height: 75px !important; /* Ajustado para que el logo grande respire */
 }
 header.scroll .navbar-brand img {
-    height: 50px !important;
+    height: 60px !important; /* Aumentado de 50px a 60px */
 }
 header.scroll .navbar-header .navbar-brand img {
     transform: none !important;
