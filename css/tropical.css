@@ -321,29 +321,35 @@ header.scroll .navbar-brand img {
     height: 100% !important;
 }
 
-#main_menu .navbar-nav > li {
-    float: none !important;
+/* Alineación Vertical Maestra — Sincronización Total */
+header .navbar-nav > li,
+#main_menu .navbar-nav > li,
+#main_menu .navbar-nav li.sc-language-selector,
+#main_menu .navbar-nav li.menu_button {
     display: flex !important;
     align-items: center !important;
-    height: 100% !important;
-    position: relative !important;
+    height: 100px !important; /* Altura fija del Navbar */
+    float: none !important;
 }
 
-/* Tipografía y Links - Consistencia Azul Océano */
 header .navbar-nav > li > a,
-#main_menu .navbar-nav > li > a {
-    color: #008eb0 !important; /* Azul Océano Consistente */
-    font-family: var(--font-body) !important;
-    font-weight: 700 !important;
-    letter-spacing: 1.2px !important;
-    font-size: 11px !important;
-    padding: 0 18px !important; /* Espaciado lateral generoso */
-    height: 100% !important;
+#main_menu .navbar-nav > li > a,
+#main_menu .navbar-nav li.sc-language-selector > a {
     display: flex !important;
     align-items: center !important;
-    transition: all 0.3s ease !important;
+    justify-content: center !important;
+    height: 100% !important;
+    padding: 0 15px !important;
+    line-height: 1 !important; /* Elimina cualquier desplazamiento por interlineado */
+    margin: 0 !important;
+}
+
+/* Forzar color y estilo en idioma */
+#main_menu .navbar-nav li.sc-language-selector > a {
+    color: #008eb0 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
     text-transform: uppercase !important;
-    background: transparent !important;
 }
 
 header .navbar-nav > li > a:hover,
@@ -352,8 +358,17 @@ header .navbar-nav > li > a:hover,
 }
 
 /* Tab de Idioma - Sincronizado */
+#main_menu .navbar-nav li.sc-language-selector {
+    display: flex !important;
+    align-items: center !important;
+    height: 100px !important;
+}
 #main_menu .navbar-nav li.sc-language-selector > a {
     color: #008eb0 !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 15px !important;
 }
 
 /* Botón Reservar - El CTA debe destacar simétricamente */
@@ -361,12 +376,15 @@ header .navbar-nav > li > a:hover,
     margin-left: 20px !important;
     display: flex !important;
     align-items: center !important;
-    height: 100% !important;
+    height: 100px !important;
 }
 
 #main_menu .navbar-nav li.menu_button a.button {
-    height: auto !important;
-    padding: 12px 28px !important;
+    height: 45px !important; /* Altura fija para el botón */
+    padding: 0 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     border-radius: 6px !important;
     font-size: 11px !important;
     font-weight: 800 !important;
