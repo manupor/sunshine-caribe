@@ -1367,13 +1367,13 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
     text-transform: uppercase !important;
     padding: 25px 14px 18px 14px !important;
     transition: var(--transition) !important;
+    display: block !important;
 }
 
-.transparent #main_menu .navbar-nav li.sc-language-selector > a {
+/* Forzar visibilidad del texto en scroll y bg-solid */
+header.scroll #main_menu .navbar-nav li.sc-language-selector > a,
+header.bg-solid #main_menu .navbar-nav li.sc-language-selector > a {
     color: #fff !important;
-}
-
-.scroll #main_menu .navbar-nav li.sc-language-selector > a {
     padding: 25px 14px 18px 14px !important;
 }
 
@@ -1388,50 +1388,53 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
     border-width: 5px 4px 0;
 }
 
-/* Mostrar dropdown al hover */
+/* Dropdown menu container */
 #main_menu .navbar-nav li.sc-language-selector .sc-lang-dropdown {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 100% !important; /* Asegurar que aparezca justo debajo */
     left: 0;
-    min-width: 140px;
-    z-index: 1000;
+    min-width: 150px;
+    z-index: 99999 !important; /* Encima de todo */
     padding: 10px 0;
     margin: 0;
     list-style: none;
-}
-
-#main_menu .navbar-nav li.sc-language-selector:hover .sc-lang-dropdown {
-    display: block;
-}
-
-/* Dropdown menu */
-#main_menu .navbar-nav .sc-language-selector .sc-lang-dropdown {
-    background: var(--sc-primary-dark) !important; /* Uso de variable */
-    border: 1px solid rgba(255,255,255,0.15) !important;
+    background: #008eb0 !important; /* Celeste Profundo para consistencia */
+    border: 1px solid rgba(255,255,255,0.2) !important;
     border-radius: var(--radius-sm) !important;
-    box-shadow: var(--shadow-md) !important;
-    animation: fadeInDown 0.3s ease-out !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+/* Mostrar dropdown al hover del padre */
+#main_menu .navbar-nav li.sc-language-selector:hover .sc-lang-dropdown {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 #main_menu .navbar-nav .sc-language-selector .sc-lang-dropdown > li {
+    display: block !important;
+    width: 100% !important;
     background: transparent !important;
     border: none !important;
+    padding: 0 !important;
 }
 
 #main_menu .navbar-nav .sc-language-selector .sc-lang-dropdown > li > a {
     color: #fff !important;
-    padding: 10px 20px !important;
+    padding: 12px 20px !important;
     font-size: 13px !important;
-    font-weight: 500 !important;
+    display: block !important;
+    width: 100% !important;
     text-transform: none !important;
-    letter-spacing: 0 !important;
-    background: transparent !important;
+    letter-spacing: 0.5px !important;
+    font-weight: 600 !important;
+    transition: background 0.2s ease !important;
 }
 
 #main_menu .navbar-nav .sc-language-selector .sc-lang-dropdown > li > a:hover {
     background: var(--sc-secondary) !important;
-    color: var(--sc-dark) !important;
+    color: #004d5a !important; /* Texto oscuro para contraste sobre amarillo */
 }
 
 /* Mobile language selector */
