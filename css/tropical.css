@@ -232,9 +232,26 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
     z-index: 10000 !important;
     display: flex !important;
     align-items: center !important;
+    justify-content: center !important; /* Centrado Horizontal */
 }
 .top_menu .container {
     width: 100% !important;
+    display: flex !important;
+    justify-content: center !important; /* Centrado del contenido del container */
+}
+.top_menu .top_menu_right {
+    float: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+.top_menu .top_menu_right > li {
+    float: none !important;
+    display: inline-block !important;
+    margin: 0 15px !important;
 }
 
 /* Ajuste del Header para que empiece debajo de la Top Bar */
