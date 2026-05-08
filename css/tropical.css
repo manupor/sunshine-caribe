@@ -233,27 +233,27 @@ p { color: var(--sc-text-muted); line-height: 1.75; margin: 0 0 12px; }
 .top_menu .top_menu_right > li > a:hover { color: var(--sc-secondary) !important; }
 .top_menu .top_menu_right > li i { color: var(--sc-secondary); }
 
-/* ===== HEADER / NAVBAR — FONDO BLANCO ===== */
-header.fixed {
+/* ===== HEADER / NAVBAR — FONDO BLANCO GLOBAL ===== */
+header,
+header.fixed,
+header.bg-solid,
+header.scroll,
+#main-header {
+    background: #ffffff !important;
     border-bottom: 1px solid rgba(0, 142, 176, 0.1) !important;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    background: #ffffff !important; /* Fondo Blanco */
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px) !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
     padding: 10px 0 !important;
-}
-header.fixed.scrolled,
-header.fixed.is-sticky,
-header.scroll {
-    background: #ffffff !important; /* Fondo Blanco en scroll */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
-}
-header.bg-solid {
-    background: #ffffff !important; /* Fondo Blanco sólido */
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
 }
 
-/* Nav links Azul en Navbar Blanco */
-header .navbar-nav > li > a {
+/* Nav links Azul Global */
+header .navbar-nav > li > a,
+#main_menu .navbar-nav > li > a {
     color: #008eb0 !important; /* Azul Océano */
     font-family: var(--font-body) !important;
     font-weight: 700 !important;
@@ -261,89 +261,63 @@ header .navbar-nav > li > a {
     font-size: 0.78em !important;
     padding: 25px 14px 18px 14px !important;
     transition: var(--transition) !important;
+    background: transparent !important;
 }
-header .navbar-nav > li > a:hover {
+
+header .navbar-nav > li > a:hover,
+#main_menu .navbar-nav > li > a:hover {
     color: var(--sc-secondary) !important; /* Amarillo al hover */
 }
-header .navbar-nav > li.active > a {
+
+header .navbar-nav > li.active > a,
+#main_menu .navbar-nav > li.active > a {
     color: var(--sc-primary) !important; /* Turquesa para el activo */
 }
 
-/* Ajuste Proporcional del Logo */
-header .navbar-brand {
-    height: auto !important;
-    padding: 5px 0 !important;
-    display: flex !important;
-    align-items: center !important;
-}
-header .navbar-brand img {
-    height: 65px !important; /* Altura ajustada */
-    width: auto !important; /* Proporcional */
-    max-height: none !important;
-    transition: transform 0.3s ease;
-}
-header.scroll .navbar-brand img {
-    height: 55px !important; /* Un poco más pequeño al scroll */
+/* Selector de Idioma — Forzado a Azul en todos los estados */
+#main_menu .navbar-nav li.sc-language-selector > a,
+header li.sc-language-selector > a,
+.sc-language-selector a {
+    color: #008eb0 !important;
+    background: transparent !important;
 }
 
-/* Language selector en azul */
-#main_menu .navbar-nav li.sc-language-selector > a {
-    color: #008eb0 !important; /* Azul Océano */
-}
-header.scroll #main_menu .navbar-nav li.sc-language-selector > a,
-header.bg-solid #main_menu .navbar-nav li.sc-language-selector > a {
-    color: #008eb0 !important; /* Asegurar azul en todos los estados */
-}
-#main_menu .navbar-nav li.sc-language-selector > a .caret {
+#main_menu .navbar-nav li.sc-language-selector > a .caret,
+header li.sc-language-selector > a .caret {
     border-top-color: #008eb0 !important;
 }
 
-/* Mobile Menu Button Color */
-header .mobile_menu_btn .icon-bar {
-    background: #008eb0 !important;
-}
-header .navbar-nav > li > a:hover,
-header .navbar-nav > li.active > a {
+#main_menu .navbar-nav li.sc-language-selector:hover > a {
     color: var(--sc-secondary) !important;
 }
-/* Ajuste Proporcional del Logo */
-header .navbar-brand {
+
+/* Ajuste Proporcional del Logo Global */
+header .navbar-brand,
+.navbar-header .navbar-brand {
     height: 80px !important;
     padding: 10px 0 !important;
     display: flex !important;
     align-items: center !important;
     margin-top: 0 !important;
+    background: transparent !important;
 }
-header .navbar-brand img {
-    height: 75px !important; /* Aumentado de 60px a 75px */
-    width: auto !important; /* Mantiene proporción */
+
+header .navbar-brand img,
+.navbar-brand img {
+    height: 75px !important; 
+    width: auto !important; 
     max-height: 90px !important;
-    transform: none !important; /* Eliminar escalas que deforman */
+    transform: none !important;
     transition: all 0.3s ease;
 }
-header.scroll .navbar-brand {
-    height: 75px !important; /* Ajustado para que el logo grande respire */
-}
+
 header.scroll .navbar-brand img {
-    height: 60px !important; /* Aumentado de 50px a 60px */
+    height: 60px !important;
 }
-header.scroll .navbar-header .navbar-brand img {
-    transform: none !important;
-}
-/* Mobile: smaller logo */
-@media (max-width: 991px) {
-    header .navbar-header .navbar-brand img {
-        transform: none !important;
-        height: 50px !important;
-    }
-    header.scroll .navbar-header .navbar-brand img {
-        transform: none !important;
-        height: 40px !important;
-    }
-}
-/* Top menu positioning */
-.top_menu {
-    display: none !important;
+
+/* Mobile Menu Button Color */
+header .mobile_menu_btn .icon-bar {
+    background: #008eb0 !important;
 }
 
 /* Navbar always sticky/fixed during scroll - positioned at top */
