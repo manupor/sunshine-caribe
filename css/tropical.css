@@ -287,12 +287,13 @@ header.scroll .navbar-brand img {
     height: 70px !important; /* Reducido de 85px a 70px en scroll */
 }
 
-/* Alineación Perfecta de los Tabs */
+/* Alineación Perfecta de los Tabs — CENTRADOS */
 #main_menu, 
 .navbar-collapse {
     height: 100% !important;
     display: flex !important;
     align-items: center !important;
+    justify-content: center !important; /* CENTRADO EN LA PÁGINA */
 }
 
 #main_menu .navbar-nav {
@@ -300,7 +301,21 @@ header.scroll .navbar-brand img {
     display: flex !important;
     align-items: center !important;
     height: 100% !important;
-    float: right !important;
+    float: none !important; /* Eliminamos float right */
+    justify-content: center !important;
+}
+
+header .navbar-header {
+    position: absolute !important; /* Sacamos el logo del flujo para que el menú se centre en la pantalla */
+    left: 15px !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+header .navbar-brand {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 #main_menu .navbar-nav > li {
