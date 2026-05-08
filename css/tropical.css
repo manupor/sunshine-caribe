@@ -1360,26 +1360,26 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 }
 
 #main_menu .navbar-nav li.sc-language-selector > a {
-    color: #a1b1c1;
-    font-size: .95em;
-    font-weight: 900;
-    letter-spacing: .05em;
-    text-transform: uppercase;
-    padding: 30px 20px;
-    transition: all 0.3s;
+    color: #fff !important;
+    font-size: .78em !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.8px !important;
+    text-transform: uppercase !important;
+    padding: 25px 14px 18px 14px !important;
+    transition: var(--transition) !important;
 }
 
 .transparent #main_menu .navbar-nav li.sc-language-selector > a {
-    color: #fff;
+    color: #fff !important;
 }
 
 .scroll #main_menu .navbar-nav li.sc-language-selector > a {
-    padding: 20px 20px;
+    padding: 25px 14px 18px 14px !important;
 }
 
 #main_menu .navbar-nav li.sc-language-selector > a:hover,
 #main_menu .navbar-nav li.sc-language-selector:hover > a {
-    color: #deb666;
+    color: var(--sc-secondary) !important;
 }
 
 #main_menu .navbar-nav li.sc-language-selector > a .caret {
@@ -1394,7 +1394,11 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
     position: absolute;
     top: 100%;
     left: 0;
+    min-width: 140px;
     z-index: 1000;
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
 }
 
 #main_menu .navbar-nav li.sc-language-selector:hover .sc-lang-dropdown {
@@ -1403,16 +1407,11 @@ footer .address_details li i { color: var(--sc-accent); margin-right: 6px; }
 
 /* Dropdown menu */
 #main_menu .navbar-nav .sc-language-selector .sc-lang-dropdown {
-    background: var(--sc-dark) !important;
-    border: 1px solid rgba(255,255,255,0.1) !important;
-    border-radius: 4px !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
-    min-width: 120px !important;
-    padding: 8px 0 !important;
-    margin-top: 0 !important;
-    left: auto !important;
-    right: 0 !important;
-    animation: none !important;
+    background: #005a6a !important; /* Igual al color del footer y scroll */
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    border-radius: var(--radius-sm) !important;
+    box-shadow: var(--shadow-md) !important;
+    animation: fadeInDown 0.3s ease-out !important;
 }
 
 #main_menu .navbar-nav .sc-language-selector .sc-lang-dropdown > li {
