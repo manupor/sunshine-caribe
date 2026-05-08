@@ -289,23 +289,13 @@ header.scroll .navbar-brand img {
 /* Language selector en azul */
 #main_menu .navbar-nav li.sc-language-selector > a {
     color: #008eb0 !important; /* Azul Océano */
-    font-family: var(--font-body) !important;
-    font-weight: 700 !important;
-    letter-spacing: 1.8px !important;
-    font-size: 0.78em !important;
-    text-transform: uppercase !important;
-    padding: 25px 14px 18px 14px !important;
-}
-#main_menu .navbar-nav li.sc-language-selector > a .caret {
-    border-top-color: #008eb0 !important;
-}
-#main_menu .navbar-nav li.sc-language-selector > a:hover {
-    color: var(--sc-secondary) !important;
 }
 header.scroll #main_menu .navbar-nav li.sc-language-selector > a,
 header.bg-solid #main_menu .navbar-nav li.sc-language-selector > a {
-    color: #008eb0 !important; /* Forzar azul en todos los estados */
-    padding: 25px 14px 18px 14px !important;
+    color: #008eb0 !important; /* Asegurar azul en todos los estados */
+}
+#main_menu .navbar-nav li.sc-language-selector > a .caret {
+    border-top-color: #008eb0 !important;
 }
 
 /* Mobile Menu Button Color */
