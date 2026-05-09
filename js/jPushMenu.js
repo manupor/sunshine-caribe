@@ -15,13 +15,12 @@ jQuery(document).ready(function($){
 
 
         $(this).click(function () {
-
             $(this).toggleClass('mobile_menu_active');
             $('#mobile_menu').toggleClass('mobile_menu_open cbp-spmenu-open');
 
-            /* mobile menu button class */
+            /* mobile menu button class - RIGHT SIDE MENU (pushes body to left) */
             if ($(this).is('.mobile_menu_btn')) {
-                $('body').toggleClass('push_mobile cbp-spmenu-push-toright');
+                $('body').toggleClass('push_mobile cbp-spmenu-push-toleft');
             }
 
             /* disable all other button */
@@ -31,7 +30,7 @@ jQuery(document).ready(function($){
         });
         var jPushMenu = {
             close: function (o) {
-                $('.jPushMenuBtn,body,.mobile_menu_btn').removeClass('disabled active mobile_menu_active push_mobile cbp-spmenu-push-toright');
+                $('.jPushMenuBtn,body,.mobile_menu_btn').removeClass('disabled active mobile_menu_active push_mobile cbp-spmenu-push-toleft cbp-spmenu-push-toright');
                 $('#mobile_menu').removeClass('mobile_menu_open cbp-spmenu-open');
             }
         };
