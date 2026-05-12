@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import { NextRequest, NextResponse } from 'next/server'
 import { isRoomAvailable, getAllRoomsAvailability, getRoomBlockedDates } from '@/lib/availability'
 import { supabaseAdmin } from '@/lib/supabase'

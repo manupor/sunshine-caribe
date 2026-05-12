@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import { NextRequest, NextResponse } from 'next/server'
 import ical from 'ical-generator'
 import { supabaseAdmin } from '@/lib/supabase'
