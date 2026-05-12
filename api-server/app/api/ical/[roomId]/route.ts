@@ -22,7 +22,6 @@ export async function GET(
       .from('rooms')
       .select('id, name, booking_room_id')
       .eq('id', roomId)
-      .eq('active', true)
       .single()
 
     if (roomError || !room) {
