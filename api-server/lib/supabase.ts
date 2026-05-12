@@ -31,11 +31,19 @@ export function getSupabaseAdmin(): SupabaseClient {
 
 // Lazy exports for backward compatibility
 export const supabase = new Proxy({} as SupabaseClient, {
-  get: (_, prop) => (getSupabase() as unknown as Record<string | symbol, unknown>)[prop],
+  get: (_, prop) => {
+    const client = getSupabase()
+    const value = (client as unknown as Record<string | symbol, unknown>)[prop]
+    return typeof value === 'function' ? (value as Function).bind(client) : value
+  },
 })
 
 export const supabaseAdmin = new Proxy({} as SupabaseClient, {
-  get: (_, prop) => (getSupabaseAdmin() as unknown as Record<string | symbol, unknown>)[prop],
+  get: (_, prop) => {
+    const client = getSupabaseAdmin()
+    const value = (client as unknown as Record<string | symbol, unknown>)[prop]
+    return typeof value === 'function' ? (value as Function).bind(client) : value
+  },
 })
 
 void getSupabaseUrl
