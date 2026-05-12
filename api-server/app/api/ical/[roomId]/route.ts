@@ -2,10 +2,6 @@ export const dynamic = 'force-dynamic'
 import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseAdmin } from '@/lib/supabase'
 
-function formatICalDate(dateStr: string): string {
-  return dateStr.replace(/-/g, '') + 'T000000Z'
-}
-
 /**
  * GET /api/ical/[roomId]
  * Generates an iCal feed for a room.
@@ -19,8 +15,6 @@ export async function GET(
     const { roomId } = params
 
     const db = getSupabaseAdmin()
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-    const hasServiceKey = !!process.env.SUPABASE_SERVICE_ROLE_KEY
 
     const { data: room, error: roomError } = await db
       .from('rooms')
@@ -29,7 +23,7 @@ export async function GET(
       .maybeSingle()
 
     if (roomError || !room) {
-      return NextResponse.json({ error: 'Room not found', roomId, supabaseUrl, hasServiceKey, supabaseError: roomError?.message, supabaseCode: roomError?.code }, { status: 404 })
+      return NextResponse.json({ error: 'Room not found' }, { status: 404 })
     }
 
     const { data: reservations, error: resError } = await db
