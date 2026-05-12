@@ -25,7 +25,7 @@ export async function GET(
       .single()
 
     if (roomError || !room) {
-      return NextResponse.json({ error: 'Room not found' }, { status: 404 })
+      return NextResponse.json({ error: 'Room not found', roomId, supabaseError: roomError?.message, supabaseCode: roomError?.code }, { status: 404 })
     }
 
     const { data: reservations, error: resError } = await supabaseAdmin
