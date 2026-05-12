@@ -2,6 +2,7 @@
 const nextConfig = {
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
+  transpilePackages: ['ical-generator', 'node-ical'],
   async headers() {
     return [
       {
