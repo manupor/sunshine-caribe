@@ -40,29 +40,29 @@ export async function GET(
   }
 
   // Generate iCal
-  const calendar = ical({
-    name: `Sunshine Caribe - ${room.name}`,
-    description: `Availability calendar for ${room.name} at Sunshine Caribe Hotel`,
-    prodId: '//Sunshine Caribe//Hotel Reservation//EN',
-    url: `${process.env.NEXT_PUBLIC_API_URL}/api/ical/${roomId}`,
-  })
+  try {
+    const calendar = ical({ name: `Sunshine Caribe - ${room.name}` })
 
-  for (const res of reservations ?? []) {
-    calendar.createEvent({
-      id: res.id,
-      start: new Date(res.start_date),
-      end: new Date(res.end_date),
-      summary: `BLOCKED - ${res.status === 'temporary_hold' ? 'Pending Payment' : 'Reserved'}`,
-      description: res.guest_name ? `Guest: ${res.guest_name}` : 'Direct reservation',
+    for (const res of reservations ?? []) {
+      calendar.createEvent({
+        id: res.id,
+        start: new Date(res.start_date),
+        end: new Date(res.end_date),
+        summary: `BLOCKED`,
+        description: res.guest_name ? `Guest: ${res.guest_name}` : 'Direct reservation',
+      })
+    }
+
+    return new NextResponse(calendar.toString(), {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/calendar; charset=utf-8',
+        'Content-Disposition': `attachment; filename="sunshine-caribe-${roomId}.ics"`,
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+      },
     })
+  } catch (err) {
+    console.error('iCal generation error:', err)
+    return NextResponse.json({ error: 'Failed to generate calendar' }, { status: 500 })
   }
-
-  return new NextResponse(calendar.toString(), {
-    status: 200,
-    headers: {
-      'Content-Type': 'text/calendar; charset=utf-8',
-      'Content-Disposition': `attachment; filename="sunshine-caribe-${roomId}.ics"`,
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
-    },
-  })
 }
