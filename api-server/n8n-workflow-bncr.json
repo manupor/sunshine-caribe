@@ -1,0 +1,158 @@
+{
+  "name": "Sunshine Caribe – Confirmar Reserva BNCR",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [{ "mode": "everyMinutes", "value": 5 }]
+        }
+      },
+      "id": "node-outlook-trigger",
+      "name": "Email BNCR (Outlook)",
+      "type": "n8n-nodes-base.microsoftOutlookTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.first().json;\nconst emailBody = item.bodyPreview || item.body?.content || '';\nconst subject = item.subject || '';\nconst from = (item.from?.emailAddress?.address || item.sender?.emailAddress?.address || '').toLowerCase();\n\nconst isBNCR = from.includes('bncr') || from.includes('bancronacional') || subject.toLowerCase().includes('transferencia') || subject.toLowerCase().includes('sinpe') || emailBody.toLowerCase().includes('banco nacional');\n\nif (!isBNCR) {\n  return [{ json: { skip: true, reason: 'Not a BNCR email', from } }];\n}\n\nconst fullText = subject + ' ' + emailBody;\nconst match = fullText.toUpperCase().match(/SC-[A-Z0-9]{4}/);\nconst referenceCode = match ? match[0] : null;\n\nconst amountMatch = fullText.match(/[\\$₡]([\\d,.]+)/);\nconst amount = amountMatch ? parseFloat(amountMatch[1].replace(/[,.]/g, '')) : null;\n\nreturn [{ json: { referenceCode, amount, skip: false, emailSubject: subject, from, emailBody: emailBody.substring(0, 500) } }];"
+      },
+      "id": "node-extract-code",
+      "name": "Extraer Código SC-XXXX",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.referenceCode }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "node-check-code",
+      "name": "¿Tiene código SC?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api-server-pied-phi.vercel.app/api/reservations/confirm",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer SunshineCaribe2026!"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "reference_code",
+              "value": "={{ $json.referenceCode }}"
+            },
+            {
+              "name": "amount_received",
+              "value": "={{ $json.amount }}"
+            },
+            {
+              "name": "notes",
+              "value": "Confirmado automáticamente por n8n desde email BNCR"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node-confirm-api",
+      "name": "Confirmar Reserva (API)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [900, 200]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.success }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "node-check-success",
+      "name": "¿Confirmado exitosamente?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "toRecipients": "={{ $('Confirmar Reserva (API)').first().json.guest_email }}",
+        "subject": "=✅ Reserva confirmada – Sunshine Caribe | {{ $('Confirmar Reserva (API)').first().json.reference_code }}",
+        "bodyContent": "=<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\"><h2 style=\"color: #2d6a4f;\">¡Su reserva está confirmada! 🌴</h2><p>Estimado/a <strong>{{ $('Confirmar Reserva (API)').first().json.guest_name }}</strong>,</p><p>Hemos recibido su pago y su reserva ha sido confirmada.</p><hr/><table style=\"width:100%; border-collapse:collapse;\"><tr><td style=\"padding:8px; font-weight:bold;\">Código:</td><td style=\"padding:8px;\">{{ $('Confirmar Reserva (API)').first().json.reference_code }}</td></tr><tr style=\"background:#f9f9f9;\"><td style=\"padding:8px; font-weight:bold;\">Habitación:</td><td style=\"padding:8px;\">{{ $('Confirmar Reserva (API)').first().json.room_name }}</td></tr><tr><td style=\"padding:8px; font-weight:bold;\">Check-in:</td><td style=\"padding:8px;\">{{ $('Confirmar Reserva (API)').first().json.check_in }}</td></tr><tr style=\"background:#f9f9f9;\"><td style=\"padding:8px; font-weight:bold;\">Check-out:</td><td style=\"padding:8px;\">{{ $('Confirmar Reserva (API)').first().json.check_out }}</td></tr><tr><td style=\"padding:8px; font-weight:bold;\">Total:</td><td style=\"padding:8px;\">${{ $('Confirmar Reserva (API)').first().json.total_amount }} USD</td></tr></table><hr/><p style=\"color:#666;\">Contacto: <a href=\"mailto:jilmatica@outlook.com\">jilmatica@outlook.com</a></p><p><strong>Sunshine Caribe</strong><br/>Puerto Viejo de Talamanca, Costa Rica</p></div>",
+        "bodyContentType": "html"
+      },
+      "id": "node-email-guest",
+      "name": "Email al Huésped",
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [1340, 100]
+    },
+    {
+      "parameters": {
+        "toRecipients": "jilmatica@outlook.com",
+        "subject": "=✅ Reserva {{ $('Confirmar Reserva (API)').first().json.reference_code }} confirmada",
+        "bodyContent": "=Reserva confirmada automáticamente.\n\nCódigo: {{ $('Confirmar Reserva (API)').first().json.reference_code }}\nHuésped: {{ $('Confirmar Reserva (API)').first().json.guest_name }}\nEmail: {{ $('Confirmar Reserva (API)').first().json.guest_email }}\nHabitación: {{ $('Confirmar Reserva (API)').first().json.room_name }}\nCheck-in: {{ $('Confirmar Reserva (API)').first().json.check_in }}\nCheck-out: {{ $('Confirmar Reserva (API)').first().json.check_out }}\nMonto: ${{ $('Confirmar Reserva (API)').first().json.total_amount }} USD",
+        "bodyContentType": "text"
+      },
+      "id": "node-email-hotel",
+      "name": "Notificar al Hotel",
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [1340, 280]
+    }
+  ],
+  "connections": {
+    "Email BNCR (Outlook)": {
+      "main": [[{ "node": "Extraer Código SC-XXXX", "type": "main", "index": 0 }]]
+    },
+    "Extraer Código SC-XXXX": {
+      "main": [[{ "node": "¿Tiene código SC?", "type": "main", "index": 0 }]]
+    },
+    "¿Tiene código SC?": {
+      "main": [
+        [{ "node": "Confirmar Reserva (API)", "type": "main", "index": 0 }],
+        []
+      ]
+    },
+    "Confirmar Reserva (API)": {
+      "main": [[{ "node": "¿Confirmado exitosamente?", "type": "main", "index": 0 }]]
+    },
+    "¿Confirmado exitosamente?": {
+      "main": [
+        [
+          { "node": "Email al Huésped", "type": "main", "index": 0 },
+          { "node": "Notificar al Hotel", "type": "main", "index": 0 }
+        ],
+        []
+      ]
+    }
+  },
+  "settings": { "executionOrder": "v1" }
+}

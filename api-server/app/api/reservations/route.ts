@@ -3,6 +3,15 @@ import { NextRequest, NextResponse } from 'next/server'
 import { isRoomAvailable } from '@/lib/availability'
 import { supabaseAdmin } from '@/lib/supabase'
 
+function generateReferenceCode(): string {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
+  let code = 'SC-'
+  for (let i = 0; i < 4; i++) {
+    code += chars[Math.floor(Math.random() * chars.length)]
+  }
+  return code
+}
+
 /**
  * POST /api/reservations
  * Creates a new reservation with a temporary hold (bank transfer workflow).
@@ -58,11 +67,14 @@ export async function POST(req: NextRequest) {
     )
     const totalAmount = room.price_per_night * nights
 
-    // Temporary hold: 24 hours to complete bank transfer
+    // Temporary hold: 48 hours to complete bank transfer
     const holdUntil = new Date()
-    holdUntil.setHours(holdUntil.getHours() + 24)
+    holdUntil.setHours(holdUntil.getHours() + 48)
 
-    // Create reservation as temporary_hold
+    // Generate unique reference code for BNCR transfer
+    const referenceCode = generateReferenceCode()
+
+    // Create reservation as pending_payment
     const { data: reservation, error } = await supabaseAdmin
       .from('reservations')
       .insert({
@@ -70,11 +82,12 @@ export async function POST(req: NextRequest) {
         start_date: check_in,
         end_date: check_out,
         source: 'website',
-        status: 'temporary_hold',
+        status: 'pending_payment',
         guest_name,
         guest_email,
         total_amount: totalAmount,
         hold_until: holdUntil.toISOString(),
+        reference_code: referenceCode,
         notes: notes || null,
         updated_at: new Date().toISOString(),
       })
@@ -89,20 +102,25 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       success: true,
       reservation_id: reservation.id,
-      status: 'temporary_hold',
+      reference_code: referenceCode,
+      status: 'pending_payment',
       room_name: room.name,
       check_in,
       check_out,
       nights,
       total_amount: totalAmount,
       hold_until: holdUntil.toISOString(),
-      message: `Room held for 24 hours. Please complete your bank transfer of $${totalAmount} USD to confirm.`,
+      message: `Habitación reservada por 48 horas. Realice su transferencia de $${totalAmount} USD para confirmar.`,
       payment_instructions: {
-        bank: 'BNCR – Banco Nacional de Costa Rica',
-        account: 'IBAN: CR00000000000000000000',
-        amount: totalAmount,
-        reference: reservation.id.substring(0, 8).toUpperCase(),
+        bank: 'Banco Nacional de Costa Rica (BNCR)',
+        account_usd: '100-02-072-000092-8',
+        account_crc: '100-01-072-000195-3',
+        account_name: 'Inversiones Joseph & Brooks S.A.',
+        amount_usd: totalAmount,
+        description: `OBLIGATORIO escribir en descripción: ${referenceCode}`,
+        reference_code: referenceCode,
         deadline: holdUntil.toLocaleDateString('es-CR'),
+        warning: 'Sin el código en la descripción no se puede confirmar automáticamente su reserva.',
       },
     })
   } catch (err) {

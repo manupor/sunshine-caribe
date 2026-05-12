@@ -28,6 +28,7 @@ create table if not exists reservations (
   guest_email text,
   total_amount numeric(10,2),
   hold_until timestamptz,
+  reference_code text unique,
   notes text,
   created_at timestamptz default now(),
   updated_at timestamptz default now()
@@ -43,6 +44,9 @@ create index if not exists idx_reservations_status
 create index if not exists idx_reservations_hold_until
   on reservations(hold_until)
   where status = 'temporary_hold';
+
+create index if not exists idx_reservations_reference_code
+  on reservations(reference_code);
 
 -- AUTO-UPDATE updated_at trigger
 create or replace function update_updated_at()
@@ -92,3 +96,9 @@ insert into rooms (booking_room_id, name, capacity, price_per_night, booking_ica
   ('fan8', 'Ventilador #8 – Habitación Estándar', 2, 55.00, null),
   ('fan9', 'Ventilador #9 – Habitación Estándar', 2, 55.00, null)
 on conflict (booking_room_id) do nothing;
+
+-- ============================================================
+-- MIGRATION: Run this if table already exists
+-- ALTER TABLE reservations ADD COLUMN IF NOT EXISTS reference_code text unique;
+-- CREATE INDEX IF NOT EXISTS idx_reservations_reference_code ON reservations(reference_code);
+-- ============================================================
