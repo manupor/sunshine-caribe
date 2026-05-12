@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic'
 import { NextRequest, NextResponse } from 'next/server'
-import { supabaseAdmin } from '@/lib/supabase'
+import { getSupabaseAdmin } from '@/lib/supabase'
 
 function formatICalDate(dateStr: string): string {
   return dateStr.replace(/-/g, '') + 'T000000Z'
@@ -18,7 +18,9 @@ export async function GET(
   try {
     const { roomId } = params
 
-    const { data: room, error: roomError } = await supabaseAdmin
+    const db = getSupabaseAdmin()
+
+    const { data: room, error: roomError } = await db
       .from('rooms')
       .select('id, name, booking_room_id')
       .eq('id', roomId)
@@ -28,7 +30,7 @@ export async function GET(
       return NextResponse.json({ error: 'Room not found', roomId, supabaseError: roomError?.message, supabaseCode: roomError?.code }, { status: 404 })
     }
 
-    const { data: reservations, error: resError } = await supabaseAdmin
+    const { data: reservations, error: resError } = await db
       .from('reservations')
       .select('id, start_date, end_date, guest_name, status, source')
       .eq('room_id', roomId)
