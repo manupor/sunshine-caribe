@@ -1155,7 +1155,7 @@ footer .sc-footer-logo img {
 .sc-page-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0, 168, 204, 0.8), rgba(0, 142, 176, 0.7)); /* Solo Celestes */
+    background: linear-gradient(135deg, rgba(0, 77, 87, 0.55), rgba(0, 109, 119, 0.45));
 }
 .sc-page-hero-content { position: relative; z-index: 2; }
 .sc-page-hero h1 {
