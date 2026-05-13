@@ -84,7 +84,7 @@ function scCreateModal() {
       <div style="text-align:center;margin-bottom:24px;">
         <div style="width:64px;height:64px;background:#e8f5e9;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:2em;">✅</div>
         <h4 style="color:#006d77;font-family:'Playfair Display',serif;font-size:1.4em;margin:0 0 6px;">¡Reserva Registrada!</h4>
-        <p style="color:#666;font-size:0.92em;margin:0;">Tu habitación está apartada por <strong>48 horas</strong>. Completa el pago para confirmar.</p>
+        <p style="color:#666;font-size:0.92em;margin:0;">Tu habitación está apartada por <strong>24 horas</strong>. Completa el pago para confirmar.</p>
       </div>
 
       <div style="background:#f0f9f9;border:2px solid #006d77;border-radius:12px;padding:20px;margin-bottom:20px;">

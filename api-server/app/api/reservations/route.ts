@@ -67,9 +67,9 @@ export async function POST(req: NextRequest) {
     )
     const totalAmount = room.price_per_night * nights
 
-    // Temporary hold: 48 hours to complete bank transfer
+    // Temporary hold: 24 hours to complete bank transfer
     const holdUntil = new Date()
-    holdUntil.setHours(holdUntil.getHours() + 48)
+    holdUntil.setHours(holdUntil.getHours() + 24)
 
     // Generate unique reference code for BNCR transfer
     const referenceCode = generateReferenceCode()
@@ -110,7 +110,7 @@ export async function POST(req: NextRequest) {
       nights,
       total_amount: totalAmount,
       hold_until: holdUntil.toISOString(),
-      message: `Habitación reservada por 48 horas. Realice su transferencia de $${totalAmount} USD para confirmar.`,
+      message: `Habitación reservada por 24 horas. Realice su transferencia de $${totalAmount} USD para confirmar.`,
       payment_instructions: {
         bank: 'Banco Nacional de Costa Rica (BNCR)',
         account_usd: '100-02-072-000092-8',
