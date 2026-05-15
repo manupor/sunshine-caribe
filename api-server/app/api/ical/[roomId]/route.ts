@@ -30,7 +30,7 @@ export async function GET(
       .from('reservations')
       .select('id, start_date, end_date, guest_name, status, source')
       .eq('room_id', roomId)
-      .in('status', ['confirmed', 'temporary_hold', 'blocked'])
+      .in('status', ['confirmed', 'pending_payment', 'blocked'])
       .not('source', 'eq', 'booking')
       .order('start_date', { ascending: true })
 
@@ -45,19 +45,20 @@ export async function GET(
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
       'PRODID:-//Sunshine Caribe//Hotel Reservation//EN',
-      `X-WR-CALNAME:Sunshine Caribe - ${room.name}`,
       'CALSCALE:GREGORIAN',
       'METHOD:PUBLISH',
+      `X-WR-CALNAME:Sunshine Caribe - ${room.name}`,
     ]
 
     for (const res of reservations ?? []) {
+      const start = res.start_date.replace(/-/g, '')
+      const end = res.end_date.replace(/-/g, '')
       lines.push('BEGIN:VEVENT')
-      lines.push(`UID:${res.id}@sunshinecaribe.com`)
       lines.push(`DTSTAMP:${now}`)
-      lines.push(`DTSTART;VALUE=DATE:${res.start_date.replace(/-/g, '')}`)
-      lines.push(`DTEND;VALUE=DATE:${res.end_date.replace(/-/g, '')}`)
-      lines.push('SUMMARY:BLOCKED')
-      lines.push(`DESCRIPTION:${res.guest_name ? `Guest: ${res.guest_name}` : 'Direct reservation'}`)
+      lines.push(`DTSTART;VALUE=DATE:${start}`)
+      lines.push(`DTEND;VALUE=DATE:${end}`)
+      lines.push(`UID:${res.id}@sunshinecaribe.com`)
+      lines.push('SUMMARY:RESERVED')
       lines.push('END:VEVENT')
     }
 
