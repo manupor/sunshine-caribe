@@ -110,15 +110,8 @@
             toggleNavbarMethod();
             $(window).on("resize", (toggleNavbarMethod));
 
-            $(".navbar-toggle").on("click", function () {
-                $(this).toggleClass("active");
-            });
         });
 
-        /*========== MOBILE MENU ==========*/
-        $('.mobile_menu_btn').jPushMenu({
-            closeOnClickLink: false
-        });
         $('.dropdown-toggle').dropdown();
 
         /*========== COMMING SOON PAGE ==========*/

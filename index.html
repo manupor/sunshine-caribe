@@ -38,7 +38,7 @@
         <header class="fixed" id="main-header">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle mobile_menu_btn jPushMenuBtn" aria-expanded="false" onclick="toggleMobileMenu(this)">
+                    <button type="button" class="navbar-toggle mobile_menu_btn jPushMenuBtn" aria-expanded="false">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -55,6 +55,7 @@
                         <li><a href="index.html#puerto-viejo">PUERTO VIEJO</a></li>
                         <li><a href="blog-puerto-viejo.html">BLOG</a></li>
                         <li><a href="contacto.html">CONT&Aacute;CTANOS</a></li>
+                        <li class="lang-switch"><a href="index-en.html" title="English"><i class="fa fa-globe"></i> EN</a></li>
                         <li class="menu_button">
                             <a href="https://wa.me/50688932987" class="button sc-btn-secondary" target="_blank">RESERVAR</a>
                         </li>
@@ -68,6 +69,7 @@
                         <li><a href="index.html#puerto-viejo">PUERTO VIEJO</a></li>
                         <li><a href="blog-puerto-viejo.html">BLOG</a></li>
                         <li><a href="contacto.html">CONT&Aacute;CTANOS</a></li>
+                        <li class="lang-switch"><a href="index-en.html" title="English"><i class="fa fa-globe"></i> EN</a></li>
                         <li class="menu_button">
                             <a href="https://wa.me/50688932987" class="button sc-btn-secondary" target="_blank">
                                 RESERVAR
@@ -528,39 +530,6 @@
 
     <div id="back_to_top"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
     <div id="notification"></div>
-
-    <!-- Mobile Menu Fallback Function -->
-    <script>
-        function toggleMobileMenu(btn) {
-            var menu = document.getElementById('mobile_menu');
-            var body = document.body;
-            
-            if (menu.classList.contains('cbp-spmenu-open')) {
-                // Close menu
-                menu.classList.remove('cbp-spmenu-open', 'mobile_menu_open');
-                body.classList.remove('push_mobile', 'cbp-spmenu-push-toleft');
-                btn.classList.remove('active', 'mobile_menu_active');
-            } else {
-                // Open menu
-                menu.classList.add('cbp-spmenu-open', 'mobile_menu_open');
-                body.classList.add('push_mobile', 'cbp-spmenu-push-toleft');
-                btn.classList.add('active', 'mobile_menu_active');
-            }
-        }
-        
-        // Close menu when clicking on a link
-        document.addEventListener('DOMContentLoaded', function() {
-            var menu = document.getElementById('mobile_menu');
-            if (menu) {
-                menu.querySelectorAll('a').forEach(function(link) {
-                    link.addEventListener('click', function() {
-                        var btn = document.querySelector('.mobile_menu_btn');
-                        toggleMobileMenu(btn);
-                    });
-                });
-            }
-        });
-    </script>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>

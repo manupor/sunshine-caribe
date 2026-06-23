@@ -111,5 +111,12 @@ $(window).resize(function() {
 });
 
 $(window).resize(); // trigger event so it shows on load
-    
+
+    $('.mobile_menu_btn').jPushMenu({
+        closeOnClickLink: true
+    });
+    $('.mobile_menu_btn').on('click', function () {
+        $(this).toggleClass('active');
+    });
+
 });

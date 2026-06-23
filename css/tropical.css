@@ -2282,3 +2282,38 @@ header.fixed.bg-solid {
     opacity: 1;
     visibility: visible;
 }
+
+/* ===== LANGUAGE SWITCHER ===== */
+/* Desktop language switch */
+header .navbar-nav > li.lang-switch {
+    display: flex;
+    align-items: center;
+}
+header .navbar-nav > li.lang-switch > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 6px;
+    padding: 6px 14px !important;
+    border: 1.5px solid var(--sc-secondary);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--sc-secondary);
+    transition: all 0.25s ease;
+}
+header .navbar-nav > li.lang-switch > a:hover {
+    background: var(--sc-secondary);
+    color: #fff;
+}
+header .navbar-nav > li.lang-switch > a i { font-size: 1em; }
+
+/* Mobile language switch */
+.cbp-spmenu .nav.navbar-nav > li.lang-switch > a {
+    color: var(--sc-secondary) !important;
+}
+.cbp-spmenu .nav.navbar-nav > li.lang-switch > a i {
+    margin-right: 8px;
+}
